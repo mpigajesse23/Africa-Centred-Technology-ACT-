@@ -1,0 +1,31 @@
+:root {
+  /* Colors - African Inspired Palette */
+  --bg-primary: #FCF9F2;
+  --bg-secondary: #F1EDE4;
+  --bg-tertiary: #E5E1D8;
+
+  --accent-primary: #1B3022;
+  --accent-secondary: #D35400;
+  --accent-accent: #F39C12;
+  --accent-action: #C0392B;
+
+  /* Aliases for compatibility */
+  --accent-blue: var(--accent-secondary);
+  --accent-cyan: var(--accent-accent);
+  --accent-violet: var(--accent-action);
+
+  --success: #1B3022;
+  --warning: #F39C12;
+  --error: #C0392B;
+
+  --text-primary: #2C2C2C;
+  --text-secondary: #4A4A4A;
+  --text-muted: #737373;
+
+  /* Spacing */
+  --unit: 8px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --duration-base: 0.6s;
+}

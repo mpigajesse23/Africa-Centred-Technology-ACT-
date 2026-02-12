@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin section-padding {
+  padding: ($unit * 12) ($unit * 4);
+  
+  @media (min-width: 1024px) {
+    padding: ($unit * 20) ($unit * 10);
+  }
+}
+
+@mixin text-gradient($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
