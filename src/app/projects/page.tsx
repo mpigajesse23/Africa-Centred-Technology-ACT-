@@ -7,116 +7,56 @@ import { ExternalLink, ArrowRight, Filter, Sparkles, ArrowUpRight, X, ChevronLef
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
 
-const categories = ["Tous", "Web", "Mobile", "Data", "Cloud"];
+const categories = ["Tous", "IA", "E-commerce", "SIG", "Média"];
 
 const projects = [
   {
     id: 1,
-    title: "Plateforme FinTech Pan-Africaine",
-    category: "Web",
-    description: "Solution de paiement mobile permettant les transferts transfrontaliers en temps réel à travers 15 pays africains. Architecture microservices avec haute disponibilité.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["React", "Node.js", "Blockchain", "AWS"],
-    client: "FinBank Africa",
+    title: "Chatbot Multimodal RAG",
+    category: "IA",
+    description: "Chatbot multimodal capable de répondre à partir de documents, images, audio et vidéo grâce à un pipeline RAG et embeddings multimodaux.",
+    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    tags: ["RAG", "OpenAI GPT-5", "pgvector", "Streamlit"],
+    client: "ACT Lab",
     year: "2025",
-    results: ["2M+ utilisateurs actifs", "15 pays connectés", "99.9% uptime"],
+    results: ["Recherche multimodale", "Indexation vectorielle", "Pipeline robuste"],
     featured: true
   },
   {
     id: 2,
-    title: "App Mobile Agritech",
-    category: "Mobile",
-    description: "Application connectant les agriculteurs aux marchés et fournissant des analyses météo prédictives basées sur l'IA. Fonctionne hors ligne.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["React Native", "AI/ML", "IoT", "Firebase"],
-    client: "AgriConnect",
+    title: "CODRescue",
+    category: "E-commerce",
+    description: "Système de gestion e-commerce pour la préparation de commandes, logistique et supervision avec dashboards temps réel.",
+    image: "/realisationprojet/2025/CODRescue-v2.png",
+    tags: ["Django", "Tailwind", "PostgreSQL", "IA assistée"],
+    client: "CODRescue",
     year: "2025",
-    results: ["50k+ agriculteurs", "+30% revenus", "80% précision météo"],
+    results: ["Process optimisés", "Suivi logistique", "KPI temps réel"],
     featured: true
   },
   {
     id: 3,
-    title: "Dashboard Analytics Télécoms",
-    category: "Data",
-    description: "Système d'analyse en temps réel pour optimiser les performances réseau d'un opérateur télécoms majeur avec prédiction de pannes.",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["Python", "Tableau", "Big Data", "Spark"],
-    client: "TelecomPlus",
-    year: "2024",
-    results: ["-40% incidents", "ROI 300%", "5TB/jour traités"],
+    title: "GreenSIG V1",
+    category: "SIG",
+    description: "Plateforme SIG de gestion des espaces verts avec cartographie interactive, planification et suivi des interventions.",
+    image: "/realisationprojet/2026/GreenSIGapp.png",
+    tags: ["React", "TypeScript", "Leaflet", "Tailwind"],
+    client: "GreenSIG",
+    year: "2026",
+    results: ["Cartographie centralisée", "Gestion des équipes", "Inventaire optimisé"],
     featured: true
   },
   {
     id: 4,
-    title: "Infrastructure Cloud E-commerce",
-    category: "Cloud",
-    description: "Migration et optimisation cloud pour une marketplace e-commerce régionale avec 2M+ utilisateurs actifs et scaling automatique.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["AWS", "Kubernetes", "Terraform", "GitOps"],
-    client: "AfriShop",
-    year: "2024",
-    results: ["-60% coûts", "10x scalabilité", "Zero downtime"],
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Portail Bancaire Digital",
-    category: "Web",
-    description: "Refonte complète du portail client d'une banque majeure avec authentification biométrique et sécurité renforcée.",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["Next.js", "TypeScript", "Security", "OAuth2"],
-    client: "BankWest Africa",
-    year: "2024",
-    results: ["500k clients", "+200% engagement", "0 breach"],
-    featured: false
-  },
-  {
-    id: 6,
-    title: "Système IoT Smart City",
-    category: "Data",
-    description: "Réseau de capteurs intelligents pour la gestion urbaine d'une capitale africaine couvrant transport et énergie.",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["IoT", "Edge Computing", "AI", "MQTT"],
-    client: "Ville de Dakar",
-    year: "2023",
-    results: ["10k capteurs", "-25% énergie", "Traffic optimisé"],
-    featured: false
-  },
-  {
-    id: 7,
-    title: "Plateforme EdTech",
-    category: "Mobile",
-    description: "Application d'apprentissage en ligne avec cours hors ligne pour zones à faible connectivité. Gamification intégrée.",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["Flutter", "Firebase", "Offline-first", "PWA"],
-    client: "EduAfrica",
-    year: "2023",
-    results: ["100k étudiants", "85% complétion", "5 pays"],
-    featured: false
-  },
-  {
-    id: 8,
-    title: "Solution HealthTech",
-    category: "Web",
-    description: "Plateforme de télémédecine connectant patients et médecins dans les zones rurales africaines avec dossiers médicaux électroniques.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["Vue.js", "WebRTC", "HIPAA", "PostgreSQL"],
-    client: "HealthBridge",
-    year: "2023",
-    results: ["25k consultations", "500 médecins", "12 régions"],
-    featured: false
-  },
-  {
-    id: 9,
-    title: "Data Lake Assurance",
-    category: "Cloud",
-    description: "Architecture data lake pour centraliser et analyser les données clients d'un groupe d'assurance pan-africain.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["Snowflake", "dbt", "Airflow", "Azure"],
-    client: "InsureAfrica Group",
-    year: "2022",
-    results: ["50TB données", "+45% insights", "8 filiales"],
-    featured: false
+    title: "GAM (Génies Afrique Médias)",
+    category: "Média",
+    description: "Plateforme média digitale panafricaine (Web TV + contenus éditoriaux) en architecture headless.",
+    image: "/realisationprojet/2026/GAM-Genies-Afrique-Medias.png",
+    tags: ["Next.js", "Django", "Wagtail", "PWA"],
+    client: "AFRITECK INSTITUT",
+    year: "2026",
+    results: ["CMS éditorial", "Web TV", "SEO Google News"],
+    featured: true
   }
 ];
 
@@ -139,6 +79,7 @@ export default function ProjectsPage() {
       <ImmersiveWrapper 
         ref={heroRef}
         videoUrl="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-1065-large.mp4"
+        priority={true}
         className="min-h-[600px] flex items-center"
       >
         <div className="container mx-auto px-4 relative z-10 py-20">
@@ -180,9 +121,9 @@ export default function ProjectsPage() {
 
             <div className="flex items-center gap-8">
               {[
-                { value: "150+", label: "Projets" },
-                { value: "98%", label: "Satisfaction" },
-                { value: "15", label: "Pays" }
+                { value: "15", label: "Projets" },
+                { value: "20%", label: "Satisfaction" },
+                { value: "2", label: "Pays" }
               ].map((stat, i) => (
                 <motion.div
                   key={i}
@@ -242,7 +183,7 @@ export default function ProjectsPage() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-contain transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1B3022] via-[#1B3022]/40 to-transparent" />
                   
@@ -353,7 +294,7 @@ export default function ProjectsPage() {
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="object-contain transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1B3022]/80 via-transparent to-transparent" />
                     
@@ -436,7 +377,7 @@ export default function ProjectsPage() {
                       src={selectedProject.image}
                       alt={selectedProject.title}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   
@@ -520,7 +461,7 @@ export default function ProjectsPage() {
               </h2>
               <p className="text-white/70 text-[18px] mb-12 max-w-[600px] mx-auto">
                 Prêt à faire de votre prochain projet une success story technologique ? 
-                L'équipe Binacod Africa est à votre écoute.
+                L'équipe Africa Centred Technology ( ACT ) est à votre écoute.
               </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link

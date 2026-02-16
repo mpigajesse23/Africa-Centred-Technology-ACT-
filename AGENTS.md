@@ -1,5 +1,5 @@
 ## Project Summary
-Binacod Africa is a premium, engineering-led consulting firm dedicated to transforming African enterprises into global tech leaders. The platform features a high-end, professional design inspired by top-tier consulting templates, adapted with a vibrant "Safari Professional" African color palette.
+Africa Centred Technology ( ACT ) is a premium, engineering-led consulting firm dedicated to transforming African enterprises into global tech leaders. The platform features a high-end, professional design inspired by top-tier consulting templates, adapted with a vibrant "Safari Professional" African color palette.
 
 ## Tech Stack
 - React (latest)
@@ -16,7 +16,7 @@ Binacod Africa is a premium, engineering-led consulting firm dedicated to transf
 - Integrated Cookie Consent management.
 
 ## User Preferences
-- Name: Binacod Africa.
+- Name: Africa Centred Technology ( ACT ).
 - Language: French navigation and primary CTAs.
 - Colors: Deep Forest Green (#1B3022), Burnt Orange (#D35400), Golden Yellow (#F39C12), Warm Earthy Red (#C0392B).
 - Aesthetic: Engineering excellence meets professional consulting. No "marketplace" preview elements.
@@ -24,7 +24,7 @@ Binacod Africa is a premium, engineering-led consulting firm dedicated to transf
 ## Project Guidelines
 - Maintain the "Safari Professional" aesthetic.
 - All primary navigation and call-to-actions should be in French.
-- Content must reflect BINACOD's engineering-first philosophy.
+- Content must reflect ACT's engineering-first philosophy.
 
 ## Common Patterns
 - Fixed header with branding and search.

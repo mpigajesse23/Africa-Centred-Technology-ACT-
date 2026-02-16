@@ -9,45 +9,78 @@ import Header from '@/components/sections/header';
 import Footer from '@/components/sections/footer';
 import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
 
-const categories = ["Tous", "FinTech", "Cloud", "AI/ML", "Sécurité", "DevOps", "Innovation"];
+const categories = ["Tous", "Réalisations", "IA", "E-commerce", "SIG", "Média", "FinTech", "Innovation", "Sécurité"];
 
 const featuredPost = {
   id: 1,
-  title: "L'avenir du paiement mobile en Afrique subsaharienne",
-  excerpt: "Comment les innovations fintech transforment l'accès aux services financiers pour des millions d'Africains. Une analyse approfondie des tendances, opportunités et défis qui façonnent l'avenir de la finance sur le continent.",
-  image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-  author: { name: "Amadou Diallo", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80", role: "CEO & Fondateur" },
-  date: "15 Jan 2026",
-  readTime: "8 min",
-  category: "FinTech",
+  title: "GAM (Génies Afrique Médias): Lancement d'une Web TV panafricaine",
+  excerpt: "Retour sur notre réalisation GAM : une plateforme média headless avec Web TV, CMS éditorial et diffusion optimisée pour l'Afrique.",
+  image: "/realisationprojet/2026/GAM-Genies-Afrique-Medias.png",
+  author: { name: "Équipe fondatrice ACT", avatar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80", role: "Startup collective" },
+  date: "12 Feb 2026",
+  readTime: "6 min",
+  category: "Média",
   trending: true
 };
 
 const blogPosts = [
   {
-    id: 2,
-    title: "Cloud Computing: Stratégies gagnantes pour les entreprises africaines",
-    excerpt: "Les meilleures pratiques pour une migration cloud réussie adaptée au contexte africain et aux contraintes locales.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    author: { name: "Fatou Ndiaye", avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
-    date: "10 Jan 2026",
-    readTime: "7 min",
-    category: "Cloud",
+    id: 3,
+    title: "Chatbot Multimodal RAG: IA documentaire de nouvelle génération",
+    excerpt: "Comment nous avons connecté documents, audio, images et vidéo pour un assistant IA réellement multimodal.",
+    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    author: { name: "Équipe fondatrice ACT", avatar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
+    date: "8 Feb 2026",
+    readTime: "5 min",
+    category: "IA",
     featured: true
   },
   {
-    id: 3,
+    id: 4,
+    title: "CODRescue: Orchestration e-commerce & logistique",
+    excerpt: "Notre plateforme pour centraliser préparation de commandes, stock et supervision en temps réel.",
+    image: "/realisationprojet/2025/CODRescue-v2.png",
+    author: { name: "Équipe fondatrice ACT", avatar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
+    date: "4 Feb 2026",
+    readTime: "6 min",
+    category: "E-commerce",
+    featured: false
+  },
+  {
+    id: 5,
+    title: "GreenSIG V1: cartographie des espaces verts",
+    excerpt: "Une plateforme SIG complète pour planifier, inventorier et piloter les interventions terrain.",
+    image: "/realisationprojet/2026/GreenSIGapp.png",
+    author: { name: "Équipe fondatrice ACT", avatar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
+    date: "28 Jan 2026",
+    readTime: "5 min",
+    category: "SIG",
+    featured: false
+  },
+  {
+    id: 6,
+    title: "GAM (Génies Afrique Médias): média digital panafricain",
+    excerpt: "Web TV, CMS éditorial et diffusion optimisée pour porter la voix africaine.",
+    image: "/realisationprojet/2026/GAM-Genies-Afrique-Medias.png",
+    author: { name: "Équipe fondatrice ACT", avatar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
+    date: "12 Jan 2026",
+    readTime: "5 min",
+    category: "Média",
+    featured: false
+  },
+  {
+    id: 7,
     title: "Intelligence Artificielle et Agriculture: La révolution verte africaine",
     excerpt: "L'IA au service des agriculteurs africains pour optimiser les rendements et prédire les conditions météo.",
     image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     author: { name: "Kofi Mensah", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
     date: "5 Jan 2026",
     readTime: "6 min",
-    category: "AI/ML",
-    featured: true
+    category: "IA",
+    featured: false
   },
   {
-    id: 4,
+    id: 8,
     title: "Cybersécurité: Protéger les entreprises africaines contre les menaces modernes",
     excerpt: "Les menaces émergentes et les solutions pour sécuriser vos infrastructures digitales sur le continent.",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -58,29 +91,18 @@ const blogPosts = [
     featured: false
   },
   {
-    id: 5,
+    id: 9,
     title: "E-commerce en Afrique: Les tendances qui façonneront 2026",
     excerpt: "Les innovations qui transforment le commerce en ligne sur le continent africain et créent de nouvelles opportunités.",
     image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    author: { name: "Amadou Diallo", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
+    author: { name: "Équipe fondatrice ACT", avatar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
     date: "20 Dec 2025",
     readTime: "6 min",
     category: "Innovation",
     featured: false
   },
   {
-    id: 6,
-    title: "DevOps: Accélérer la livraison logicielle en Afrique",
-    excerpt: "Comment les pratiques DevOps transforment le développement logiciel et accélèrent l'innovation africaine.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    author: { name: "Fatou Ndiaye", avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
-    date: "15 Dec 2025",
-    readTime: "7 min",
-    category: "DevOps",
-    featured: false
-  },
-  {
-    id: 7,
+    id: 10,
     title: "Blockchain et Traçabilité: Révolutionner la supply chain africaine",
     excerpt: "Applications concrètes de la blockchain pour améliorer la transparence et l'efficacité des chaînes d'approvisionnement.",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -91,7 +113,7 @@ const blogPosts = [
     featured: false
   },
   {
-    id: 8,
+    id: 11,
     title: "StartupS africaines: Comment attirer les investisseurs internationaux",
     excerpt: "Guide pratique pour les entrepreneurs africains souhaitant lever des fonds auprès d'investisseurs globaux.",
     image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -103,7 +125,7 @@ const blogPosts = [
   }
 ];
 
-const popularTags = ["FinTech", "Cloud", "AI/ML", "Mobile", "Blockchain", "Startups", "Data"];
+const popularTags = ["Réalisations", "IA", "E-commerce", "SIG", "Média", "Startups", "FinTech", "Innovation", "Sécurité"];
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("Tous");
@@ -128,7 +150,8 @@ export default function BlogPage() {
       <ImmersiveWrapper 
         ref={heroRef}
         videoUrl="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-1065-large.mp4"
-        className="min-h-[550px] flex items-center"
+        priority={true}
+        className="min-h-[650px] flex items-center -mt-[150px] pt-[150px]"
       >
         <div className="container mx-auto px-4 relative z-10 py-20">
           <motion.div
@@ -544,7 +567,7 @@ export default function BlogPage() {
               >
                 <h3 className="text-[#1B3022] font-bold text-[14px] uppercase mb-6">À propos</h3>
                 <p className="text-[#2C2C2C]/70 text-[13px] leading-relaxed mb-6 font-medium">
-                  Le blog Binacod Africa partage des insights sur la technologie, l'innovation et la transformation digitale en Afrique.
+                  Le blog Africa Centred Technology ( ACT ) partage des insights sur la technologie, l'innovation et la transformation digitale en Afrique.
                 </p>
                 <motion.div whileHover={{ scale: 1.02 }}>
                   <Link 

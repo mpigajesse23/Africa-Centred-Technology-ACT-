@@ -5,50 +5,36 @@ import Image from 'next/image';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const categories = ["Tous", "Web", "Mobile", "Data", "Cloud"];
+const categories = ["Tous", "IA", "E-commerce", "SIG", "Média"];
 
 const projects = [
   {
-    title: "Plateforme FinTech Pan-Africaine",
-    category: "Web",
-    description: "Solution de paiement mobile permettant les transferts transfrontaliers en temps réel.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["React", "Node.js", "Blockchain"]
+    title: "Chatbot Multimodal RAG",
+    category: "IA",
+    description: "Chatbot multimodal répondant à partir de documents, images, audio et vidéo avec un pipeline RAG.",
+    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    tags: ["RAG", "GPT-5", "pgvector"],
   },
   {
-    title: "App Mobile Agritech",
-    category: "Mobile",
-    description: "Application connectant les agriculteurs aux marchés et fournissant des analyses météo prédictives.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["React Native", "AI/ML", "IoT"]
+    title: "CODRescue",
+    category: "E-commerce",
+    description: "Gestion e-commerce pour préparation de commandes, logistique et supervision avec dashboards temps réel.",
+    image: "/realisationprojet/2025/CODRescue-v2.png",
+    tags: ["Django", "Tailwind", "PostgreSQL"],
   },
   {
-    title: "Dashboard Analytics Télécoms",
-    category: "Data",
-    description: "Système d'analyse en temps réel pour optimiser les performances réseau d'un opérateur majeur.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["Python", "Tableau", "Big Data"]
+    title: "GreenSIG V1",
+    category: "SIG",
+    description: "Plateforme SIG des espaces verts avec cartographie interactive, planification et suivi des interventions.",
+    image: "/realisationprojet/2026/GreenSIGapp.png",
+    tags: ["React", "TypeScript", "Leaflet"]
   },
   {
-    title: "Infrastructure Cloud E-commerce",
-    category: "Cloud",
-    description: "Migration et optimisation cloud pour une marketplace e-commerce régionale.",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["AWS", "Kubernetes", "Terraform"]
-  },
-  {
-    title: "Portail Bancaire Digital",
-    category: "Web",
-    description: "Refonte complète du portail client d'une banque majeure avec authentification biométrique.",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["Next.js", "TypeScript", "Security"]
-  },
-  {
-    title: "Système IoT Smart City",
-    category: "Data",
-    description: "Réseau de capteurs intelligents pour la gestion urbaine d'une capitale africaine.",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["IoT", "Edge Computing", "AI"]
+    title: "GAM (Génies Afrique Médias)",
+    category: "Média",
+    description: "Plateforme média digitale panafricaine (Web TV + contenus éditoriaux) en architecture headless.",
+    image: "/realisationprojet/2026/GAM-Genies-Afrique-Medias.png",
+    tags: ["Next.js", "Django", "Wagtail", "PWA"]
   }
 ];
 
@@ -152,7 +138,7 @@ const ProjectsSection = () => {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-contain transition-transform duration-700 group-hover:scale-105"
                   />
                   <motion.div 
                     className="absolute inset-0 bg-gradient-to-t from-[#1B3022] via-transparent to-transparent"

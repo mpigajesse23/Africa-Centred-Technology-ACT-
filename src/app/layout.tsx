@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Binacod Africa | Engineering the Future",
+  title: "Africa Centred Technology ( ACT ) | Engineering the Future",
   description: "Engineering-led consulting firm dedicated to transforming African enterprises into global tech leaders.",
 };
 

@@ -19,7 +19,7 @@ const HeroSection = () => {
         >
           <Image
             src={assetUrl}
-            alt="Professional Consulting Background"
+            alt="Africa Centred Technology ( ACT ) en conseil professionnel"
             fill
             priority
             className="object-cover object-center"
@@ -69,7 +69,7 @@ const HeroSection = () => {
               animate={{ opacity: [1, 0.7, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Binacod Africa • Engineering the Future
+              Africa Centred Technology ( ACT ) • Engineering the Future
             </motion.span>
           </motion.div>
 
@@ -97,7 +97,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="text-white/80 font-body text-[20px] mb-10 max-w-[600px]"
           >
-            Binacod Africa est un cabinet de conseil en ingénierie dédié à transformer les entreprises africaines en leaders technologiques mondiaux.
+            Africa Centred Technology ( ACT ) est un cabinet de conseil en ingénierie dédié à transformer les entreprises africaines en leaders technologiques mondiaux.
           </motion.p>
 
           <motion.div 

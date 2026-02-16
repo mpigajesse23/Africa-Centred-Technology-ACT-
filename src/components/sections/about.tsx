@@ -6,10 +6,10 @@ import { CheckCircle, Users, Award, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const stats = [
-  { value: "150+", label: "Projets Réalisés", icon: Target },
-  { value: "50+", label: "Clients Satisfaits", icon: Users },
-  { value: "12", label: "Années d'Expérience", icon: Award },
-  { value: "25+", label: "Experts Tech", icon: CheckCircle },
+  { value: "15+", label: "Projets Réalisés", icon: Target },
+  { value: "20+", label: "Clients Satisfaits", icon: Users },
+  { value: "3+", label: "Années d'innovation", icon: Award },
+  { value: "10+", label: "Talents", icon: CheckCircle },
 ];
 
 const values = [
@@ -38,7 +38,7 @@ const AboutSection = () => {
             >
               <Image
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Notre équipe"
+                alt="Équipe Africa Centred Technology ( ACT )"
                 width={600}
                 height={500}
                 className="w-full h-[500px] object-cover"
@@ -71,9 +71,9 @@ const AboutSection = () => {
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                12+
+                3+
               </motion.span>
-              <span className="text-[14px] uppercase tracking-wider opacity-80">Années d'Excellence</span>
+              <span className="text-[14px] uppercase tracking-wider opacity-80">Années d'innovation</span>
             </motion.div>
 
             <motion.div
@@ -123,8 +123,8 @@ const AboutSection = () => {
               transition={{ delay: 0.3 }}
               className="text-[#2C2C2C] font-body text-[17px] leading-relaxed mb-6 opacity-80"
             >
-              Binacod Africa est né de la conviction que l'Afrique possède un potentiel technologique immense, 
-              prêt à être libéré. Depuis plus d'une décennie, nous accompagnons les entreprises africaines 
+              Africa Centred Technology ( ACT ) est née en 2023 avec la conviction que l'Afrique possède un potentiel technologique immense, 
+              prêt à être libéré. Depuis notre lancement, nous accompagnons les entreprises africaines 
               dans leur voyage vers l'excellence digitale.
             </motion.p>
 

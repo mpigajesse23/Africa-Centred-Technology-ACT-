@@ -2,7 +2,8 @@
 
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Linkedin, Twitter, Facebook, ArrowRight, Sparkles, MessageCircle, Calendar, Globe, Shield, Zap } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Linkedin, Facebook, Youtube, ArrowRight, Sparkles, MessageCircle, Calendar, Globe, Shield, Zap } from 'lucide-react';
+import TikTokIcon from '@/components/ui/tiktok-icon';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ImmersiveWrapper, AINodesBackground } from '@/components/ui/immersive-backgrounds';
 import Header from '@/components/sections/header';
@@ -19,8 +20,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: ["contact@binacod.africa", "support@binacod.africa"],
-    action: "mailto:contact@binacod.africa",
+    details: ["contact@act.africa", "support@act.africa"],
+    action: "mailto:contact@act.africa",
     actionLabel: "Envoyer un email"
   },
   {
@@ -49,35 +50,11 @@ const offices = [
     timezone: "GMT+1",
     isHQ: true
   },
-  { 
-    city: "Dakar", 
-    country: "Sénégal", 
-    address: "123 Avenue de l'Innovation", 
-    phone: "+221 33 123 45 67",
-    flag: "🇸🇳",
-    timezone: "GMT"
-  },
-  { 
-    city: "Abidjan", 
-    country: "Côte d'Ivoire", 
-    address: "45 Rue du Commerce, Plateau", 
-    phone: "+225 27 20 123 456",
-    flag: "🇨🇮",
-    timezone: "GMT"
-  },
-  { 
-    city: "Nairobi", 
-    country: "Kenya", 
-    address: "12 Westlands Road", 
-    phone: "+254 20 123 4567",
-    flag: "🇰🇪",
-    timezone: "GMT+3"
-  },
 ];
 
 const faqs = [
   {
-    question: "Comment démarrer un projet avec Binacod ?",
+    question: "Comment démarrer un projet avec ACT ?",
     answer: "Contactez-nous via le formulaire ou par téléphone. Notre équipe vous recontactera sous 24h pour une première consultation gratuite où nous analyserons vos besoins et définirons ensemble la meilleure approche."
   },
   {
@@ -94,7 +71,7 @@ const faqs = [
   },
   {
     question: "Quelles technologies utilisez-vous ?",
-    answer: "Nous utilisons les technologies les plus adaptées à chaque projet : React, Node.js, Python, Cloud AWS/Azure, IA/ML, et bien plus. Notre approche est technology-agnostic."
+    answer: "Nous utilisons les technologies les plus adaptées à chaque projet : React, Node.js, Python, IA/ML, et bien plus. Notre approche est technology-agnostic."
   }
 ];
 
@@ -190,7 +167,7 @@ export default function ContactPage() {
               
               <p className="text-white/80 text-[18px] leading-relaxed mb-10 max-w-[500px]">
                 Vous avez une vision ? Nous avons l'expertise pour la concrétiser. 
-                Discutons de votre projet et découvrez comment Binacod peut transformer vos ambitions en réalité.
+                Discutons de votre projet et découvrez comment ACT peut transformer vos ambitions en réalité.
               </p>
 
               <div className="grid grid-cols-3 gap-4">
@@ -345,7 +322,7 @@ export default function ContactPage() {
                       value={formState.phone}
                       onChange={(e) => setFormState({...formState, phone: e.target.value})}
                       className="w-full px-5 py-4 bg-white border-2 border-transparent focus:border-[#D35400] focus:outline-none transition-all text-[14px] shadow-sm rounded-xl"
-                      placeholder="+221 XX XXX XX XX"
+                      placeholder="+212 XX XXX XX XX"
                     />
                   </div>
                 </div>
@@ -365,7 +342,6 @@ export default function ContactPage() {
                       <option value="web">Application Web</option>
                       <option value="mobile">Application Mobile</option>
                       <option value="data">Data & Analytics</option>
-                      <option value="cloud">Infrastructure Cloud</option>
                       <option value="conseil">Conseil Stratégique</option>
                       <option value="autre">Autre</option>
                     </select>
@@ -380,10 +356,10 @@ export default function ContactPage() {
                       className="w-full px-5 py-4 bg-white border-2 border-transparent focus:border-[#D35400] focus:outline-none transition-all text-[14px] shadow-sm appearance-none cursor-pointer rounded-xl"
                     >
                       <option value="">Sélectionnez une fourchette</option>
-                      <option value="small">5 000 - 15 000 €</option>
-                      <option value="medium">15 000 - 50 000 €</option>
-                      <option value="large">50 000 - 150 000 €</option>
-                      <option value="enterprise">150 000 € +</option>
+                      <option value="small">5 000 - 15 000 MAD</option>
+                      <option value="medium">15 000 - 50 000 MAD</option>
+                      <option value="large">50 000 - 150 000 MAD</option>
+                      <option value="enterprise">150 000 MAD +</option>
                     </select>
                   </div>
                 </div>
@@ -516,8 +492,9 @@ export default function ContactPage() {
                 <div className="flex gap-3">
                   {[
                     { icon: Linkedin, label: "LinkedIn" },
-                    { icon: Twitter, label: "Twitter" },
-                    { icon: Facebook, label: "Facebook" }
+                    { icon: Facebook, label: "Facebook" },
+                    { icon: Youtube, label: "YouTube" },
+                    { icon: TikTokIcon, label: "TikTok" }
                   ].map((social, i) => (
                     <motion.a
                       key={i}
@@ -742,22 +719,22 @@ export default function ContactPage() {
                 Prêt à Transformer <br />Votre Entreprise ?
               </h2>
               <p className="text-white/80 text-[18px] mb-10 max-w-[600px] mx-auto">
-                Rejoignez les 150+ entreprises africaines qui ont fait confiance à Binacod 
+                Rejoignez les entreprises africaines qui ont fait confiance à ACT 
                 pour leur transformation digitale.
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
                 <motion.a
-                  href="tel:+221331234567"
+                  href="tel:+212694528498"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-[#D35400] px-10 py-5 text-[14px] font-bold uppercase tracking-widest hover:bg-[#1B3022] hover:text-white transition-all flex items-center gap-3 rounded-full shadow-xl"
                 >
                   <Phone className="w-5 h-5" />
-                  +221 33 123 45 67
+                  +212 694-528498
                 </motion.a>
                 <motion.a
-                  href="mailto:contact@binacod.africa"
+                  href="mailto:contact@act.africa"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-transparent text-white px-10 py-5 text-[14px] font-bold uppercase tracking-widest border-2 border-white hover:bg-white hover:text-[#D35400] transition-all flex items-center gap-3 rounded-full"

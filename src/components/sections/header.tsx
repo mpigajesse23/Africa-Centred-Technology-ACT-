@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, Menu, X, ChevronDown, ArrowRight, Phone, Mail, MapPin, PieChart, Code, BarChart3, Cloud } from 'lucide-react';
+import { Search, Menu, X, ChevronDown, ArrowRight, Phone, Mail, MapPin, PieChart, Code, BarChart3, Shield, Database, Zap } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import TopBar from './top-bar';
 
@@ -20,7 +21,9 @@ const navLinks = [
       { href: "/services#transformation", label: "Transformation Digitale", icon: PieChart },
       { href: "/services#engineering", label: "Excellence Ingénierie", icon: Code },
       { href: "/services#data", label: "Intelligence Données", icon: BarChart3 },
-      { href: "/services#cloud", label: "Infrastructure Cloud", icon: Cloud },
+      { href: "/services#data-sovereignty", label: "Souveraineté des Données", icon: Database },
+      { href: "/services#process-automation", label: "Automatisation Processus", icon: Zap },
+      { href: "/services#security", label: "Cyber-Résilience", icon: Shield }
     ]
   },
   { href: "/projects", label: "Réalisations" },
@@ -89,18 +92,17 @@ isScrolled
               >
                 <Link 
                   href="/" 
-                  className="flex items-baseline gap-0.5 group"
+                  className="flex items-center gap-3 group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="text-[#1B3022] text-[22px] lg:text-[26px] font-extrabold tracking-tight leading-none group-hover:text-[#D35400] transition-colors">
-                    Binacod
-                  </span>
-                  <motion.span 
-                    className="bg-[#D35400] text-white text-[8px] lg:text-[9px] font-bold px-1.5 py-0.5 -translate-y-2 leading-none"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    AFRICA
-                  </motion.span>
+                  <Image
+                    src="/logo/logo.png"
+                    alt="Africa Centred Technology ( ACT ) logo"
+                    width={240}
+                    height={240}
+                    className="w-36 h-36 lg:w-40 lg:h-40 object-contain"
+                    priority
+                  />
                 </Link>
               </motion.div>
 
@@ -148,23 +150,23 @@ isScrolled
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 pt-2 z-50"
                       >
-                        <div className="bg-white shadow-xl border border-gray-100 min-w-[260px] overflow-hidden">
-                          <div className="py-2">
+                        <div className="bg-white shadow-xl border border-gray-100 min-w-[420px] overflow-hidden">
+                          <div className="grid grid-cols-2 gap-1 p-3">
                             {link.submenu.map((sublink, index) => (
                               <motion.div
                                 key={sublink.href}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.03 }}
                               >
                                 <Link
                                   href={sublink.href}
-                                  className="flex items-center gap-4 px-5 py-3.5 hover:bg-[#FCF9F2] group transition-colors"
+                                  className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[#FCF9F2] group transition-colors"
                                 >
                                   <div className="w-9 h-9 bg-[#1B3022] group-hover:bg-[#D35400] transition-colors flex items-center justify-center">
                                     <sublink.icon className="w-4 h-4 text-white" />
                                   </div>
-                                  <span className="text-[#1B3022] font-semibold text-[13px] uppercase tracking-wide group-hover:text-[#D35400] transition-colors">
+                                  <span className="text-[#1B3022] font-semibold text-[12px] uppercase tracking-wide group-hover:text-[#D35400] transition-colors">
                                     {sublink.label}
                                   </span>
                                 </Link>
@@ -321,17 +323,17 @@ isScrolled
                 >
                   <h4 className="font-bold text-[13px] uppercase mb-4">Contactez-nous</h4>
                   <div className="space-y-3 text-[13px] text-white/80">
-                    <a href="tel:+221331234567" className="flex items-center gap-3 hover:text-[#F39C12] transition-colors">
+                    <a href="tel:+212694528498" className="flex items-center gap-3 hover:text-[#F39C12] transition-colors">
                       <Phone className="w-4 h-4 text-[#F39C12]" />
-                      +221 33 123 45 67
+                      +212 694-528498
                     </a>
-                    <a href="mailto:contact@binacod.africa" className="flex items-center gap-3 hover:text-[#F39C12] transition-colors">
+                    <a href="mailto:contact@act.africa" className="flex items-center gap-3 hover:text-[#F39C12] transition-colors">
                       <Mail className="w-4 h-4 text-[#F39C12]" />
-                      contact@binacod.africa
+                      contact@act.africa
                     </a>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-4 h-4 text-[#F39C12]" />
-                      Dakar, Sénégal
+                      Casablanca, Maroc
                     </div>
                   </div>
                 </motion.div>
@@ -380,7 +382,7 @@ isScrolled
               >
                 <p className="text-white/50 text-[12px] mb-3 uppercase tracking-wider">Recherches populaires</p>
                 <div className="flex flex-wrap gap-2">
-                  {["Transformation digitale", "Cloud", "Applications mobiles", "Data Analytics"].map((term, i) => (
+                  {["Transformation digitale", "Applications mobiles", "Data Analytics"].map((term, i) => (
                     <motion.button
                       key={term}
                       initial={{ opacity: 0, scale: 0.9 }}

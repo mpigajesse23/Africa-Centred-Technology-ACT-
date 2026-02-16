@@ -32,36 +32,42 @@ const services = [
 ];
 
 const stats = [
-  { value: "150", suffix: "+", label: "Projets Réalisés", icon: Target },
-  { value: "50", suffix: "+", label: "Clients Satisfaits", icon: Users },
-  { value: "12", suffix: "", label: "Années d'Excellence", icon: Award },
-  { value: "15", suffix: "", label: "Pays Africains", icon: Globe },
+  { value: "15", suffix: "+", label: "Projets Réalisés", icon: Target },
+  { value: "20", suffix: "+", label: "Clients Satisfaits", icon: Users },
+  { value: "3", suffix: "+", label: "Années d'innovation", icon: Award },
+  { value: "10", suffix: "+", label: "Talents", icon: CheckCircle },
 ];
 
 const projects = [
   {
-    title: "IA pour l'Agriculture de Précision",
-    category: "AI / Data",
-    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Optimisation des récoltes par vision par ordinateur"
+    title: "Chatbot Multimodal RAG",
+    category: "IA",
+    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    description: "RAG multimodal sur documents, images, audio et vidéo"
   },
   {
-    title: "Plateforme FinTech Pan-Africaine",
-    category: "Web / Finance",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Solution de paiement mobile cross-border"
+    title: "CODRescue",
+    category: "E-commerce",
+    image: "/realisationprojet/2025/CODRescue-v2.png",
+    description: "Gestion e-commerce et logistique avec dashboards temps réel"
   },
   {
-    title: "Dashboard Analytics Télécoms",
-    category: "Data",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Analyse réseau en temps réel"
+    title: "GreenSIG V1",
+    category: "SIG",
+    image: "/realisationprojet/2026/GreenSIGapp.png",
+    description: "Gestion des espaces verts avec cartographie interactive"
+  },
+  {
+    title: "GAM (Génies Afrique Médias)",
+    category: "Média",
+    image: "/realisationprojet/2026/GAM-Genies-Afrique-Medias.png",
+    description: "Web TV panafricaine et contenus éditoriaux headless"
   },
 ];
 
 const testimonials = [
   {
-    quote: "Binacod a transformé notre vision en réalité. Leur expertise en IA et leur compréhension du marché africain sont inégalées.",
+    quote: "ACT a transformé notre vision en réalité. Leur expertise en IA et leur compréhension du marché africain sont inégalées.",
     author: "Marie Koné",
     role: "CEO, FinBank Côte d'Ivoire",
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
@@ -160,7 +166,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-white/80 font-body text-[18px] md:text-[20px] mb-12 max-w-[650px] leading-relaxed"
             >
-              Binacod Africa fusionne l'intelligence artificielle et l'ingénierie de pointe 
+              Africa Centred Technology ( ACT ) fusionne l'intelligence artificielle et l'ingénierie de pointe 
               pour propulser les entreprises africaines au sommet de l'innovation mondiale.
             </motion.p>
 
@@ -273,7 +279,7 @@ className="text-center relative group p-6 bg-white/5 backdrop-blur-sm border bor
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="AI Technology Africa"
+                  alt="Innovation IA Africa Centred Technology ( ACT )"
                   width={600}
                   height={600}
                   className="w-full h-[500px] object-cover"
@@ -319,7 +325,7 @@ className="text-center relative group p-6 bg-white/5 backdrop-blur-sm border bor
                   { icon: BrainCircuit, title: "IA Générative", text: "Personnalisation client à grande échelle" },
                   { icon: Zap, title: "Edge Computing", text: "Performance locale optimisée" },
                   { icon: Shield, title: "Data Ethics", text: "Solutions responsables et sécurisées" },
-                  { icon: Rocket, title: "Scalabilité", text: "Infrastructure prête pour la croissance" }
+                  { icon: Rocket, title: "Scalabilité", text: "Architecture produit prête pour la croissance" }
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
@@ -399,7 +405,7 @@ className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:s
               <div className="relative z-10 rounded-3xl overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Notre équipe au travail"
+                  alt="Équipe Africa Centred Technology ( ACT ) au travail"
                   width={600}
                   height={700}
                   className="w-full h-[600px] object-cover"
@@ -414,8 +420,8 @@ className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:s
                 className="absolute -top-8 -right-8 bg-[#1B3022] text-white p-8 z-20 shadow-2xl rounded-2xl"
                 whileHover={{ scale: 1.05, rotate: 2 }}
               >
-                <span className="text-[56px] font-extrabold block leading-none">12+</span>
-                <span className="text-[14px] uppercase tracking-wider opacity-80">Années d'Excellence</span>
+                <span className="text-[56px] font-extrabold block leading-none">2023</span>
+                <span className="text-[14px] uppercase tracking-wider opacity-80">Année de création</span>
               </motion.div>
             </motion.div>
           </div>
@@ -575,7 +581,7 @@ className="relative order-2 lg:order-1"
 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
 <Image
 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-alt="Binacod Africa Team"
+alt="Africa Centred Technology ( ACT ) Team"
 width={600}
 height={500}
 className="w-full h-[550px] object-cover"
@@ -612,7 +618,7 @@ Architectes de la <span className="text-[#F39C12]">Révolution</span> Numérique
 </h2>
 <div className="w-24 h-1.5 bg-[#D35400] mb-8" />
 <p className="text-white/70 text-[17px] leading-relaxed mb-8">
-Binacod Africa est né d'une ambition simple : prouver que l'Afrique peut non seulement 
+Africa Centred Technology ( ACT ) est né d'une ambition simple : prouver que l'Afrique peut non seulement 
 adopter la technologie, mais aussi la créer et la diriger. Notre mission est d'armer 
 les entreprises locales avec les outils technologiques les plus avancés au monde.
 </p>
@@ -680,7 +686,7 @@ Découvrir notre ADN
               Rejoignez la <br /><span className="text-[#F39C12]">Révolution Tech</span>
             </h2>
             <p className="text-white/70 text-[20px] mb-12 max-w-[700px] mx-auto leading-relaxed">
-              Prêt à transformer vos défis en opportunités technologiques ? Binacod Africa est 
+              Prêt à transformer vos défis en opportunités technologiques ? Africa Centred Technology ( ACT ) est 
               votre partenaire stratégique pour l'ère de l'Intelligence Artificielle.
             </p>
             

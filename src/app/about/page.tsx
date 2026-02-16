@@ -10,10 +10,10 @@ import Header from '@/components/sections/header';
 import Footer from '@/components/sections/footer';
 
 const stats = [
-  { value: "150", suffix: "+", label: "Projets Réalisés", description: "Solutions déployées avec succès" },
-  { value: "50", suffix: "+", label: "Clients Satisfaits", description: "Entreprises accompagnées" },
-  { value: "12", suffix: "", label: "Années d'Expérience", description: "D'excellence continue" },
-  { value: "25", suffix: "+", label: "Experts Tech", description: "Passionnés et dédiés" },
+  { value: "15", suffix: "+", label: "Projets Réalisés", description: "Solutions déployées avec succès" },
+  { value: "20", suffix: "+", label: "Clients Satisfaits", description: "Entreprises accompagnées" },
+  { value: "3", suffix: "+", label: "Années d'innovation", description: "Depuis notre lancement en 2023" },
+  { value: "10", suffix: "+", label: "Talents", description: "Équipe soudée et dynamique" },
 ];
 
 const values = [
@@ -45,49 +45,45 @@ const values = [
 
 const team = [
   {
-    name: "Amadou Diallo",
-    role: "CEO & Fondateur",
+    name: "MPIGA-ODOUMBA JESSE",
+    role: "Membre fondateur",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    bio: "15 ans d'expérience en transformation digitale. Ancien consultant McKinsey, MBA Stanford.",
+    bio: "Co-créateur d'ACT, engagé pour l'innovation africaine et l'impact technologique.",
     linkedin: "#"
   },
   {
-    name: "Fatou Ndiaye",
-    role: "Directrice Technique",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    bio: "Experte en architecture cloud et systèmes distribués. Ex-Google, AWS Certified.",
+    name: "Aldrin, Bruno Junior DJOUROBI OMANDA",
+    role: "Membre fondateur",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    bio: "Co-créateur d'ACT, porté par l'ingénierie et la croissance des startups africaines.",
     linkedin: "#"
   },
   {
-    name: "Kofi Mensah",
-    role: "Lead Data Scientist",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    bio: "Spécialiste IA/ML avec un focus sur les applications africaines. PhD MIT.",
+    name: "Elvis-Theo AKIEME OYONO",
+    role: "Membre fondateur",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    bio: "Co-créateur d'ACT, passionné par les solutions IA et l'excellence produit.",
     linkedin: "#"
   },
   {
-    name: "Aïcha Touré",
-    role: "Directrice Conseil",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    bio: "Stratège business avec expertise marchés émergents. Ex-BCG, HEC Paris.",
+    name: "Sohaib BAROUD",
+    role: "Membre fondateur",
+    image: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    bio: "Co-créateur d'ACT, animé par la collaboration et le déploiement rapide.",
     linkedin: "#"
   }
 ];
 
 const timeline = [
-  { year: "2014", title: "Fondation", description: "Création de Binacod Africa à Dakar avec une vision pan-africaine ambitieuse.", highlight: true },
-  { year: "2016", title: "Expansion Régionale", description: "Ouverture de bureaux à Abidjan et Lagos. Premières équipes internationales." },
-  { year: "2018", title: "100 Clients", description: "Franchissement du cap des 100 entreprises accompagnées sur le continent." },
-  { year: "2020", title: "Innovation Award", description: "Récompense pour notre solution FinTech pan-africaine par Africa Tech." },
-  { year: "2023", title: "Présence Continentale", description: "Opérations dans 15 pays africains. Équipe de 25+ experts." },
-  { year: "2026", title: "Vision 2030", description: "Lancement du programme d'accélération tech pour startups africaines.", highlight: true }
+  { year: "2023", title: "Naissance", description: "Création d'Africa Centred Technology ( ACT ) comme startup d'ingénierie tech portée par une équipe soudée.", highlight: true },
+  { year: "2024", title: "Premiers POC", description: "Déploiement des premiers prototypes IA et data pour des entreprises africaines." },
+  { year: "2025", title: "Accélération", description: "Montée en puissance des missions de conseil et produits pour l'écosystème africain." },
+  { year: "2026", title: "Cap 2030", description: "Consolidation de notre vision pan-africaine avec une équipe dynamique et agile.", highlight: true }
 ];
 
 const certifications = [
   { name: "ISO 27001", description: "Sécurité de l'information" },
-  { name: "AWS Partner", description: "Advanced Consulting Partner" },
-  { name: "Google Cloud", description: "Premier Partner" },
-  { name: "Microsoft", description: "Gold Partner" }
+  { name: "Qualité Produit", description: "Excellence en ingénierie" }
 ];
 
 const AnimatedStat = ({ value, suffix, label, description }: { value: string; suffix: string; label: string; description: string }) => {
@@ -138,6 +134,7 @@ export default function AboutPage() {
       <ImmersiveWrapper 
         ref={heroRef}
         videoUrl="https://assets.mixkit.co/videos/preview/mixkit-sun-setting-over-the-horizon-of-a-savannah-34531-large.mp4"
+        priority={true}
         className="min-h-[650px] flex items-center"
       >
         <div className="container mx-auto px-4 relative z-10 py-20">
@@ -174,9 +171,9 @@ export default function AboutPage() {
               </h1>
               
               <p className="text-white/80 text-[18px] leading-relaxed mb-8 max-w-[550px]">
-                Depuis plus d'une décennie, nous transformons les entreprises africaines 
-                en leaders technologiques mondiaux, combinant expertise globale et 
-                connaissance approfondie du continent.
+                Depuis 2023, nous accompagnons les entreprises africaines 
+                en leaders technologiques mondiaux, avec l'énergie d'une startup 
+                et une compréhension profonde du continent.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -257,17 +254,16 @@ export default function AboutPage() {
               <div className="w-24 h-1.5 bg-[#D35400] mb-8" />
               
               <p className="text-[#2C2C2C]/80 text-[17px] leading-relaxed mb-6">
-                <span className="text-[#1B3022] font-bold">Binacod Africa</span> est né en 2014 de la conviction 
+                <span className="text-[#1B3022] font-bold">Africa Centred Technology ( ACT )</span> est née en 2023 de la conviction 
                 profonde que l'Afrique possède un potentiel technologique immense, prêt à être libéré.
               </p>
               <p className="text-[#2C2C2C]/70 text-[17px] leading-relaxed mb-6">
-                Notre fondateur, <span className="text-[#D35400] font-semibold">Amadou Diallo</span>, après une 
-                décennie passée dans les plus grandes entreprises tech mondiales, a décidé de revenir sur le 
-                continent pour bâtir quelque chose d'exceptionnel.
+                Notre équipe fondatrice — MPIGA-ODOUMBA JESSE, Aldrin, Bruno Junior DJOUROBI OMANDA, Elvis-Theo AKIEME OYONO et Sohaib BAROUD — 
+                a uni ses forces pour bâtir une startup africaine ambitieuse, sans hiérarchie figée.
               </p>
               <p className="text-[#2C2C2C]/70 text-[17px] leading-relaxed mb-8">
-                Aujourd'hui, nous sommes fiers d'avoir accompagné plus de 150 entreprises africaines dans leur 
-                transformation digitale, des startups innovantes aux grands groupes panafricains.
+                Aujourd'hui, nous avançons avec une équipe soudée et dynamique, en accompagnant des startups et 
+                des organisations africaines dans leur transformation digitale.
               </p>
 
               <div className="flex flex-wrap gap-6">
@@ -296,7 +292,7 @@ export default function AboutPage() {
               <div className="relative z-10">
                 <Image
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Notre bureau"
+                  alt="Bureau Africa Centred Technology ( ACT )"
                   width={600}
                   height={500}
                   className="w-full h-[500px] object-cover"
@@ -322,8 +318,8 @@ export default function AboutPage() {
                 className="absolute -top-6 -right-6 bg-[#1B3022] text-white p-8 z-20"
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="text-[48px] font-extrabold block leading-none">12+</span>
-                <span className="text-[13px] uppercase tracking-wider opacity-80">Années</span>
+                <span className="text-[48px] font-extrabold block leading-none">2023</span>
+                <span className="text-[13px] uppercase tracking-wider opacity-80">Année de création</span>
               </motion.div>
             </motion.div>
           </div>
@@ -426,7 +422,7 @@ export default function AboutPage() {
               Notre Parcours
             </span>
             <h2 className="text-[#1B3022] font-display text-[40px] font-bold uppercase mb-4">
-              Une Décennie d'<span className="text-[#D35400]">Excellence</span>
+              Un Parcours en <span className="text-[#D35400]">Construction</span>
             </h2>
             <div className="w-24 h-1.5 bg-[#D35400] mx-auto" />
           </motion.div>
@@ -493,11 +489,11 @@ export default function AboutPage() {
               L'Équipe
             </span>
             <h2 className="text-white font-display text-[40px] font-bold uppercase mb-4">
-              Les Visionnaires <span className="text-[#F39C12]">Binacod</span>
+              Les Fondateurs <span className="text-[#F39C12]">ACT</span>
             </h2>
             <div className="w-24 h-1.5 bg-[#D35400] mx-auto mb-6" />
             <p className="text-white/70 text-[17px]">
-              Une équipe d'experts passionnés par la technologie et l'Afrique.
+              Une équipe fondatrice soudée et dynamique, sans hiérarchie figée.
             </p>
           </motion.div>
 
@@ -608,7 +604,7 @@ export default function AboutPage() {
               Prêt à rejoindre <br />l'aventure ?
             </h2>
             <p className="text-white/80 text-[18px] mb-10 max-w-[600px] mx-auto">
-              Découvrez comment Binacod Africa peut transformer votre entreprise et 
+              Découvrez comment Africa Centred Technology ( ACT ) peut transformer votre entreprise et 
               propulser votre croissance digitale.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

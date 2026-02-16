@@ -2,7 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { MapPin, Phone, Mail, ArrowUp, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import Image from 'next/image';
+import { MapPin, Phone, Mail, ArrowUp, Linkedin, Facebook, Youtube } from 'lucide-react';
+import TikTokIcon from '@/components/ui/tiktok-icon';
 import { motion } from 'framer-motion';
 
 const footerLinks = {
@@ -31,9 +33,9 @@ const footerLinks = {
 
 const socialLinks = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: TikTokIcon, href: "#", label: "TikTok" },
 ];
 
 const Footer = () => {
@@ -54,18 +56,20 @@ const Footer = () => {
           >
             <Link 
               href="/" 
-              className="flex items-baseline gap-0.5 mb-6 inline-flex"
+              className="inline-flex items-center mb-6"
             >
-              <span className="text-white text-[32px] font-extrabold tracking-tight leading-none">
-                Binacod
-              </span>
-              <span className="bg-[#D35400] text-white text-[10px] font-bold px-1.5 py-0.5 -translate-y-3 leading-none">
-                AFRICA
-              </span>
+              <Image
+                src="/logo/logo1.png"
+                alt="Africa Centred Technology ( ACT ) logo"
+                width={200}
+                height={200}
+                className="w-28 h-28 lg:w-32 lg:h-32 object-contain"
+                priority
+              />
             </Link>
 
             <p className="text-white/70 font-body text-[15px] leading-relaxed mb-8 max-w-[350px]">
-              Cabinet de conseil en ingénierie dédié à transformer les entreprises africaines en leaders technologiques mondiaux.
+              Partenaire d’ingénierie et de technologie pour accélérer la transformation des entreprises africaines en leaders mondiaux.
             </p>
 
               <div className="space-y-4">
@@ -88,7 +92,7 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                 >
                   <Mail className="w-5 h-5 text-[#D35400]" />
-                  <span className="text-white/70 text-[14px]">contact@binacod.africa</span>
+                  <span className="text-white/70 text-[14px]">contact@act.africa</span>
                 </motion.div>
               </div>
           </motion.div>
@@ -176,7 +180,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-white/50 text-[13px] text-center md:text-left"
             >
-              © 2026 Binacod Africa. Tous droits réservés. Fait avec passion en Afrique.
+              © 2026 Africa Centred Technology ( ACT ). Tous droits réservés. Fait avec passion en Afrique.
             </motion.p>
 
             <div className="flex items-center gap-4">

@@ -6,9 +6,11 @@ import Link from 'next/link';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { 
   BarChart3, Briefcase, Globe, Landmark, LineChart, PieChart, 
-  ArrowRight, CheckCircle, Zap, Shield, Cloud, Database,
+  ArrowRight, CheckCircle, Zap, Shield, Database,
   Cpu, Code, Server, Users, Sparkles, ArrowUpRight, ChevronRight
 } from 'lucide-react';
+import Header from '@/components/sections/header';
+import Footer from '@/components/sections/footer';
 import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
 
 const services = [
@@ -68,26 +70,33 @@ const services = [
     color: "#C0392B"
   },
   {
-    id: "cloud",
-    icon: Cloud,
-    title: "Infrastructure Cloud",
-    shortDesc: "Scalabilité infinie",
-    description: "Connexion entre l'innovation africaine et les standards mondiaux via une intégration technologique sans faille.",
-    features: ["Migration cloud", "Architecture multi-cloud", "DevOps & CI/CD", "Kubernetes", "Infrastructure as Code"],
-    stats: { projects: "40+", satisfaction: "98%" },
+    id: "data-sovereignty",
+    icon: Database,
+    title: "Souveraineté des Données",
+    shortDesc: "Données locales & conformes",
+    description: "Accompagnement pour conserver les données stratégiques sur le sol africain et réduire la dépendance aux clouds étrangers, en cohérence avec l'AU Data Policy Framework (AUDPF) validé en 2025.",
+    features: ["Stratégie de souveraineté numérique", "Architecture data locale", "Conformité AUDPF", "Gouvernance & souveraineté", "Plan de continuité locale"],
+    stats: { projects: "12+", satisfaction: "98%" },
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    color: "#F39C12"
-  }
+    color: "#1B3022"
+  },
+  {
+    id: "process-automation",
+    icon: Zap,
+    title: "Automatisation des Processus Métier",
+    shortDesc: "Efficacité opérationnelle",
+    description: "Optimisation et automatisation des workflows métiers, avec ou sans IA, pour réduire les coûts, améliorer la qualité et accélérer l'exécution.",
+    features: ["Cartographie des processus", "Automatisation no-code/low-code", "Agents IA métiers", "Intégration ERP/CRM", "Suivi & optimisation"],
+    stats: { projects: "20+", satisfaction: "97%" },
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    color: "#D35400"
+  },
 ];
 
 const technologies = [
-  { name: "AWS", icon: Cloud, category: "Cloud" },
-  { name: "Azure", icon: Server, category: "Cloud" },
-  { name: "GCP", icon: Database, category: "Cloud" },
   { name: "Python", icon: Cpu, category: "Languages" },
   { name: "React", icon: Code, category: "Frontend" },
   { name: "Node.js", icon: Server, category: "Backend" },
-  { name: "Kubernetes", icon: Database, category: "DevOps" },
   { name: "TensorFlow", icon: Cpu, category: "AI/ML" },
 ];
 
@@ -140,6 +149,7 @@ export default function ServicesPage() {
       <ImmersiveWrapper 
         ref={heroRef}
         videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-movement-of-a-digital-data-network-1064-large.mp4"
+        priority={true}
         className="min-h-[650px] flex items-center"
       >
         <div className="container mx-auto px-4 relative z-10 py-20">
@@ -513,7 +523,7 @@ export default function ServicesPage() {
             >
               <Image
                 src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Industries"
+                alt="Industries Africa Centred Technology ( ACT )"
                 width={600}
                 height={550}
                 className="w-full h-[550px] object-cover rounded-3xl shadow-2xl"

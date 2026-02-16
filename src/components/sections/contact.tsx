@@ -2,25 +2,26 @@
 
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import TikTokIcon from '@/components/ui/tiktok-icon';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const contactInfo = [
   {
     icon: MapPin,
     title: "Adresse",
-    details: ["123 Avenue de l'Innovation", "Dakar, Sénégal"],
+    details: ["Mer Sultan 6e Rue chateau Ru d'Agadir", "Casablanca, Maroc"],
     color: "#D35400"
   },
   {
     icon: Phone,
     title: "Téléphone",
-    details: ["+221 33 123 45 67", "+221 77 890 12 34"],
+    details: ["+212 694-528498", "+212 662-777507"],
     color: "#F39C12"
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["contact@binacod.africa", "support@binacod.africa"],
+    details: ["contact@act.africa", "support@act.africa"],
     color: "#1B3022"
   },
   {
@@ -141,15 +142,21 @@ const ContactSection = () => {
             >
               <h4 className="text-[18px] font-bold mb-4">Suivez-nous</h4>
               <div className="flex gap-4">
-                {['LinkedIn', 'Twitter', 'Facebook'].map((social, i) => (
+                {[
+                  { label: 'LinkedIn', icon: Linkedin },
+                  { label: 'Facebook', icon: Facebook },
+                  { label: 'YouTube', icon: Youtube },
+                  { label: 'TikTok', icon: TikTokIcon }
+                ].map((social, i) => (
                   <motion.a
                     key={i}
                     href="#"
                     whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-10 h-10 bg-white/10 hover:bg-[#D35400] flex items-center justify-center transition-colors text-[12px] font-bold"
+                    title={social.label}
                   >
-                    {social[0]}
+                    <social.icon className="w-4 h-4" />
                   </motion.a>
                 ))}
               </div>

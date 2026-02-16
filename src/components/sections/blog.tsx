@@ -7,31 +7,22 @@ import { motion } from 'framer-motion';
 
 const blogPosts = [
   {
-    title: "L'avenir du paiement mobile en Afrique subsaharienne",
-    excerpt: "Comment les innovations fintech transforment l'accès aux services financiers pour des millions d'Africains.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    author: "Amadou Diallo",
-    date: "15 Jan 2026",
+    title: "GAM (Génies Afrique Médias)",
+    excerpt: "Plateforme média digitale panafricaine avec Web TV et CMS éditorial.",
+    image: "/realisationprojet/2026/GAM-Genies-Afrique-Medias.png",
+    author: "Équipe fondatrice ACT",
+    date: "12 Feb 2026",
     readTime: "5 min",
-    category: "FinTech"
+    category: "Média"
   },
   {
-    title: "Cloud Computing: Stratégies pour les entreprises africaines",
-    excerpt: "Les meilleures pratiques pour une migration cloud réussie adaptée au contexte africain.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    author: "Fatou Ndiaye",
-    date: "10 Jan 2026",
-    readTime: "7 min",
-    category: "Cloud"
-  },
-  {
-    title: "Intelligence Artificielle et Agriculture: Une révolution verte",
-    excerpt: "L'IA au service des agriculteurs africains pour optimiser les rendements et prédire les conditions météo.",
-    image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    author: "Kofi Mensah",
-    date: "5 Jan 2026",
-    readTime: "6 min",
-    category: "AI/ML"
+    title: "Chatbot Multimodal RAG",
+    excerpt: "Assistant IA multimodal sur documents, images, audio et vidéo.",
+    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    author: "Équipe fondatrice ACT",
+    date: "8 Feb 2026",
+    readTime: "5 min",
+    category: "IA"
   }
 ];
 
