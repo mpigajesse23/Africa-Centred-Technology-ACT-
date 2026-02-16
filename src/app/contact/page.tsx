@@ -6,8 +6,6 @@ import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Linkedin, Facebook, Yout
 import TikTokIcon from '@/components/ui/tiktok-icon';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ImmersiveWrapper, AINodesBackground } from '@/components/ui/immersive-backgrounds';
-import Header from '@/components/sections/header';
-import Footer from '@/components/sections/footer';
 
 const contactInfo = [
   {
@@ -125,11 +123,11 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       
       <ImmersiveWrapper 
         ref={heroRef}
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-movement-of-a-digital-data-network-1064-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="min-h-[600px] flex items-center"
         priority={true}
       >
@@ -696,7 +694,7 @@ export default function ContactPage() {
       </section>
 
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-sun-setting-over-the-horizon-of-a-savannah-34531-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-24"
       >
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -748,6 +746,6 @@ export default function ContactPage() {
         </div>
       </ImmersiveWrapper>
 
-    </main>
+    </div>
   );
 }

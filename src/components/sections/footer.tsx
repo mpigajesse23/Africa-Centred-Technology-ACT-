@@ -59,7 +59,7 @@ const Footer = () => {
               className="inline-flex items-center mb-6"
             >
               <Image
-                src="/logo/logo1.png"
+                src="/logo/logo2.png"
                 alt="Africa Centred Technology ( ACT ) logo"
                 width={200}
                 height={200}

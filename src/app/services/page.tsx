@@ -9,8 +9,6 @@ import {
   ArrowRight, CheckCircle, Zap, Shield, Database,
   Cpu, Code, Server, Users, Sparkles, ArrowUpRight, ChevronRight
 } from 'lucide-react';
-import Header from '@/components/sections/header';
-import Footer from '@/components/sections/footer';
 import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
 
 const services = [
@@ -143,12 +141,10 @@ export default function ServicesPage() {
   const isHeroInView = useInView(heroRef, { once: true });
 
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden">
-      <Header />
-      
+    <div className="min-h-screen bg-white overflow-x-hidden">      
       <ImmersiveWrapper 
         ref={heroRef}
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-movement-of-a-digital-data-network-1064-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         priority={true}
         className="min-h-[650px] flex items-center"
       >
@@ -386,7 +382,7 @@ export default function ServicesPage() {
       </section>
 
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-1065-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-28"
       >
         <div className="container mx-auto px-4 relative z-10">
@@ -590,7 +586,7 @@ export default function ServicesPage() {
       </ImmersiveWrapper>
 
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-movement-of-a-digital-data-network-1064-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-24"
       >
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -636,9 +632,6 @@ export default function ServicesPage() {
             </div>
           </motion.div>
         </div>
-      </ImmersiveWrapper>
-
-      <Footer />
-    </main>
+      </ImmersiveWrapper>    </div>
   );
 }

@@ -5,8 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, User, ArrowRight, Clock, Tag, Search, Sparkles, TrendingUp, BookOpen, Mail } from 'lucide-react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import Header from '@/components/sections/header';
-import Footer from '@/components/sections/footer';
 import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
 
 const categories = ["Tous", "Réalisations", "IA", "E-commerce", "SIG", "Média", "FinTech", "Innovation", "Sécurité"];
@@ -26,9 +24,9 @@ const featuredPost = {
 const blogPosts = [
   {
     id: 3,
-    title: "Chatbot Multimodal RAG: IA documentaire de nouvelle génération",
+    title: "Système RAG Multi-sources: IA documentaire de nouvelle génération",
     excerpt: "Comment nous avons connecté documents, audio, images et vidéo pour un assistant IA réellement multimodal.",
-    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    image: "/realisationprojet/2025/systeme-rag-multi-sources.png",
     author: { name: "Équipe fondatrice ACT", avatar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" },
     date: "8 Feb 2026",
     readTime: "5 min",
@@ -144,12 +142,11 @@ export default function BlogPage() {
   const secondaryFeatured = blogPosts.filter(p => p.featured).slice(0, 2);
 
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden">
-      <Header />
+    <div className="min-h-screen bg-white overflow-x-hidden">
       
       <ImmersiveWrapper 
         ref={heroRef}
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-1065-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         priority={true}
         className="min-h-[650px] flex items-center -mt-[150px] pt-[150px]"
       >
@@ -584,7 +581,7 @@ export default function BlogPage() {
       </section>
 
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-movement-of-a-digital-data-network-1064-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-24"
       >
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -622,7 +619,6 @@ export default function BlogPage() {
         </div>
       </ImmersiveWrapper>
 
-      <Footer />
-    </main>
+    </div>
   );
 }

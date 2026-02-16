@@ -16,9 +16,9 @@ const blogPosts = [
     category: "Média"
   },
   {
-    title: "Chatbot Multimodal RAG",
+    title: "Système RAG Multi-sources",
     excerpt: "Assistant IA multimodal sur documents, images, audio et vidéo.",
-    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    image: "/realisationprojet/2025/systeme-rag-multi-sources.png",
     author: "Équipe fondatrice ACT",
     date: "8 Feb 2026",
     readTime: "5 min",

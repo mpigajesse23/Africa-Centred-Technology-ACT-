@@ -7,8 +7,6 @@ import { ArrowRight, BarChart3, Globe, CheckCircle, Users, Award, Target, Sparkl
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import CookieConsent from '@/components/sections/cookie-consent';
 import { AINodesBackground, AfricanPattern, ImmersiveWrapper, AIParticleFlow } from '@/components/ui/immersive-backgrounds';
-import Header from '@/components/sections/header';
-import Footer from '@/components/sections/footer';
 
 const services = [
   { 
@@ -21,7 +19,7 @@ const services = [
     title: "Intelligence Artificielle", 
     icon: BrainCircuit, 
     description: "Solutions d'IA générative et prédictive pour l'Afrique",
-    stats: "15+ projets"
+    stats: "15 projets"
   },
   { 
     title: "Excellence en Ingénierie", 
@@ -32,17 +30,16 @@ const services = [
 ];
 
 const stats = [
-  { value: "15", suffix: "+", label: "Projets Réalisés", icon: Target },
-  { value: "20", suffix: "+", label: "Clients Satisfaits", icon: Users },
-  { value: "3", suffix: "+", label: "Années d'innovation", icon: Award },
-  { value: "10", suffix: "+", label: "Talents", icon: CheckCircle },
+  { value: "15", suffix: "", label: "Projets", icon: Target },
+  { value: "100", suffix: "%", label: "Satisfaction", icon: Users },
+  { value: "2", suffix: "", label: "Pays", icon: Award },
 ];
 
 const projects = [
   {
-    title: "Chatbot Multimodal RAG",
+    title: "Système RAG Multi-sources",
     category: "IA",
-    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    image: "/realisationprojet/2025/systeme-rag-multi-sources.png",
     description: "RAG multimodal sur documents, images, audio et vidéo"
   },
   {
@@ -111,13 +108,13 @@ export default function Home() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
     return (
-      <main className="min-h-screen bg-white overflow-x-hidden">
+      <div className="min-h-screen bg-white overflow-x-hidden">
         
         {/* Hero Section with Immersive Background */}
         <ImmersiveWrapper 
 
         ref={heroRef}
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-sun-setting-over-the-horizon-of-a-savannah-34531-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="min-h-[100vh] flex items-center"
         priority={true}
       >
@@ -265,7 +262,7 @@ className="text-center relative group p-6 bg-white/5 backdrop-blur-sm border bor
 
       {/* AI & Innovation Section */}
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-movement-of-a-digital-data-network-1064-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-28"
       >
         <div className="container mx-auto px-4 relative z-10">
@@ -430,7 +427,7 @@ className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:s
 
       {/* Portfolio Section */}
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-1065-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-28"
       >
         <div className="container mx-auto px-4 relative z-10">
@@ -662,7 +659,7 @@ Découvrir notre ADN
 
       {/* Final CTA */}
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-movement-of-a-digital-data-network-1064-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-32"
       >
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -712,6 +709,6 @@ Découvrir notre ADN
           </motion.div>
         </div>
       </ImmersiveWrapper>
-    </main>
+    </div>
   );
 }

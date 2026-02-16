@@ -9,10 +9,10 @@ const categories = ["Tous", "IA", "E-commerce", "SIG", "Média"];
 
 const projects = [
   {
-    title: "Chatbot Multimodal RAG",
+    title: "Système RAG Multi-sources",
     category: "IA",
     description: "Chatbot multimodal répondant à partir de documents, images, audio et vidéo avec un pipeline RAG.",
-    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    image: "/realisationprojet/2025/systeme-rag-multi-sources.png",
     tags: ["RAG", "GPT-5", "pgvector"],
   },
   {

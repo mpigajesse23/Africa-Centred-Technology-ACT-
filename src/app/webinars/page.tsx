@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Video, Calendar, Clock, Users, ArrowRight, Play, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import Header from '@/components/sections/header';
-import Footer from '@/components/sections/footer';
 import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
 
 const upcomingWebinars = [
@@ -75,12 +73,10 @@ export default function WebinarsPage() {
   const [selectedTab, setSelectedTab] = useState<"upcoming" | "past">("upcoming");
 
   return (
-    <main className="min-h-screen bg-[#FCF9F2]">
-      <Header />
-      
+    <div className="min-h-screen bg-[#FCF9F2]">      
       {/* Hero Section */}
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-group-of-people-in-a-video-conference-4644-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         priority={true}
         className="min-h-[650px] flex items-center"
       >
@@ -311,9 +307,6 @@ export default function WebinarsPage() {
             </button>
           </motion.div>
         </div>
-      </section>
-
-      <Footer />
-    </main>
+      </section>    </div>
   );
 }

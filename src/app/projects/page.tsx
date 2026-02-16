@@ -12,10 +12,10 @@ const categories = ["Tous", "IA", "E-commerce", "SIG", "Média"];
 const projects = [
   {
     id: 1,
-    title: "Chatbot Multimodal RAG",
+    title: "Système RAG Multi-sources",
     category: "IA",
     description: "Chatbot multimodal capable de répondre à partir de documents, images, audio et vidéo grâce à un pipeline RAG et embeddings multimodaux.",
-    image: "/realisationprojet/2025/chatbotmulitmodale.png",
+    image: "/realisationprojet/2025/systeme-rag-multi-sources.png",
     tags: ["RAG", "OpenAI GPT-5", "pgvector", "Streamlit"],
     client: "ACT Lab",
     year: "2025",
@@ -74,11 +74,11 @@ export default function ProjectsPage() {
   const featuredProjects = projects.filter(p => p.featured);
 
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       
       <ImmersiveWrapper 
         ref={heroRef}
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-1065-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         priority={true}
         className="min-h-[600px] flex items-center"
       >
@@ -447,7 +447,7 @@ export default function ProjectsPage() {
 
         {/* Final CTA */}
         <ImmersiveWrapper 
-          videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-movement-of-a-digital-data-network-1064-large.mp4"
+          videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
           className="py-24"
         >
           <div className="container mx-auto px-4 text-center relative z-10">
@@ -475,7 +475,7 @@ export default function ProjectsPage() {
             </motion.div>
           </div>
         </ImmersiveWrapper>
-      </main>
+      </div>
     );
   }
 

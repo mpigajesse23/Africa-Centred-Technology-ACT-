@@ -6,14 +6,11 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Users, Award, Target, Lightbulb, Shield, Globe, Heart, ArrowRight, Play, Quote, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
-import Header from '@/components/sections/header';
-import Footer from '@/components/sections/footer';
 
 const stats = [
-  { value: "15", suffix: "+", label: "Projets Réalisés", description: "Solutions déployées avec succès" },
-  { value: "20", suffix: "+", label: "Clients Satisfaits", description: "Entreprises accompagnées" },
-  { value: "3", suffix: "+", label: "Années d'innovation", description: "Depuis notre lancement en 2023" },
-  { value: "10", suffix: "+", label: "Talents", description: "Équipe soudée et dynamique" },
+  { value: "15", suffix: "", label: "Projets", description: "Solutions déployées avec succès" },
+  { value: "100", suffix: "%", label: "Satisfaction", description: "Clients satisfaits" },
+  { value: "2", suffix: "", label: "Pays", description: "Maroc et au-delà" },
 ];
 
 const values = [
@@ -77,7 +74,7 @@ const team = [
 const timeline = [
   { year: "2023", title: "Naissance", description: "Création d'Africa Centred Technology ( ACT ) comme startup d'ingénierie tech portée par une équipe soudée.", highlight: true },
   { year: "2024", title: "Premiers POC", description: "Déploiement des premiers prototypes IA et data pour des entreprises africaines." },
-  { year: "2025", title: "Accélération", description: "Montée en puissance des missions de conseil et produits pour l'écosystème africain." },
+  { year: "2025", title: "Accélération", description: "Déploiement du Système RAG Multi-sources et montée en puissance des missions de conseil pour l'écosystème africain." },
   { year: "2026", title: "Cap 2030", description: "Consolidation de notre vision pan-africaine avec une équipe dynamique et agile.", highlight: true }
 ];
 
@@ -129,11 +126,11 @@ export default function AboutPage() {
   const [activeTeamMember, setActiveTeamMember] = useState(0);
 
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       
       <ImmersiveWrapper 
         ref={heroRef}
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-sun-setting-over-the-horizon-of-a-savannah-34531-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         priority={true}
         className="min-h-[650px] flex items-center"
       >
@@ -475,7 +472,7 @@ export default function AboutPage() {
       </ImmersiveWrapper>
 
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-1065-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-28"
       >
         <div className="container mx-auto px-4 relative z-10">
@@ -582,7 +579,7 @@ export default function AboutPage() {
       </ImmersiveWrapper>
 
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-movement-of-a-digital-data-network-1064-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-24"
       >
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -630,6 +627,6 @@ export default function AboutPage() {
         </div>
       </ImmersiveWrapper>
 
-    </main>
+    </div>
   );
 }

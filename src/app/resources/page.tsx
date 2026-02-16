@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Download, BookOpen, Video, Code, Database, Shield, Cpu, Sparkles, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import Header from '@/components/sections/header';
-import Footer from '@/components/sections/footer';
 import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
 
 const resourceCategories = [
@@ -80,12 +78,10 @@ export default function ResourcesPage() {
     : resources.filter(r => r.category === activeCategory);
 
   return (
-    <main className="min-h-screen bg-[#FCF9F2]">
-      <Header />
-      
+    <div className="min-h-screen bg-[#FCF9F2]">      
       {/* Hero Section */}
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-developer-working-on-a-laptop-4941-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         priority={true}
         className="min-h-[650px] flex items-center"
       >
@@ -249,9 +245,6 @@ export default function ResourcesPage() {
             </button>
           </motion.div>
         </div>
-      </section>
-
-      <Footer />
-    </main>
+      </section>    </div>
   );
 }

@@ -6,10 +6,9 @@ import { CheckCircle, Users, Award, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const stats = [
-  { value: "15+", label: "Projets Réalisés", icon: Target },
-  { value: "20+", label: "Clients Satisfaits", icon: Users },
-  { value: "3+", label: "Années d'innovation", icon: Award },
-  { value: "10+", label: "Talents", icon: CheckCircle },
+  { value: "15", label: "Projets", icon: Target },
+  { value: "100%", label: "Satisfaction", icon: Users },
+  { value: "2", label: "Pays", icon: Award },
 ];
 
 const values = [
@@ -71,9 +70,9 @@ const AboutSection = () => {
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                3+
+                2
               </motion.span>
-              <span className="text-[14px] uppercase tracking-wider opacity-80">Années d'innovation</span>
+              <span className="text-[14px] uppercase tracking-wider opacity-80">Pays</span>
             </motion.div>
 
             <motion.div

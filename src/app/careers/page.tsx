@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Clock, ArrowRight, Users, TrendingUp, Award, Heart, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import Header from '@/components/sections/header';
-import Footer from '@/components/sections/footer';
 import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
 
 const openPositions = [
@@ -74,12 +72,10 @@ export default function CareersPage() {
   const [selectedPosition, setSelectedPosition] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen bg-[#FCF9F2]">
-      <Header />
-      
+    <div className="min-h-screen bg-[#FCF9F2]">      
       {/* Hero Section */}
       <ImmersiveWrapper 
-        videoUrl="https://assets.mixkit.co/videos/preview/mixkit-young-people-working-in-a-modern-office-4625-large.mp4"
+        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         priority={true}
         className="min-h-[650px] flex items-center"
       >
@@ -316,9 +312,6 @@ export default function CareersPage() {
             </button>
           </motion.div>
         </div>
-      </section>
-
-      <Footer />
-    </main>
+      </section>    </div>
   );
 }
