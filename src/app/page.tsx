@@ -6,24 +6,24 @@ import Link from 'next/link';
 import { ArrowRight, BarChart3, Globe, CheckCircle, Users, Award, Target, Sparkles, Play, Quote, ArrowUpRight, Zap, Shield, Code, BrainCircuit, Cpu, Rocket, Laptop } from 'lucide-react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import CookieConsent from '@/components/sections/cookie-consent';
-import { AINodesBackground, AfricanPattern, ImmersiveWrapper, AIParticleFlow } from '@/components/ui/immersive-backgrounds';
+import { AINodesBackground, AfricanPattern, ImmersiveWrapper, AIParticleFlow, AfricanDivider } from '@/components/ui/immersive-backgrounds';
 
 const services = [
-  { 
-    title: "Transformation Digitale", 
-    icon: BarChart3, 
+  {
+    title: "Transformation Digitale",
+    icon: BarChart3,
     description: "Modernisez vos opérations avec des solutions sur mesure",
     stats: "45+ projets"
   },
-  { 
-    title: "Intelligence Artificielle", 
-    icon: BrainCircuit, 
+  {
+    title: "Intelligence Artificielle",
+    icon: BrainCircuit,
     description: "Solutions d'IA générative et prédictive pour l'Afrique",
     stats: "15 projets"
   },
-  { 
-    title: "Excellence en Ingénierie", 
-    icon: Code, 
+  {
+    title: "Excellence en Ingénierie",
+    icon: Code,
     description: "Des applications robustes et évolutives",
     stats: "30+ projets"
   },
@@ -84,11 +84,11 @@ const clients = [
 const AnimatedCounter = ({ value, suffix }: { value: string; suffix: string }) => {
   const counterRef = useRef(null);
   const isInView = useInView(counterRef, { once: true });
-  
+
   return (
     <motion.span
       ref={counterRef}
-      className="text-[#1B3022] text-[56px] md:text-[72px] font-extrabold block leading-none"
+      className="text-white text-[56px] md:text-[72px] font-extrabold block leading-none"
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
@@ -104,26 +104,132 @@ export default function Home() {
     target: heroRef,
     offset: ["start start", "end start"]
   });
-  
+
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-    return (
-      <div className="min-h-screen bg-white overflow-x-hidden">
-        
-        {/* Hero Section with Immersive Background */}
-        <ImmersiveWrapper 
+  return (
+    <div className="min-h-screen bg-white overflow-x-hidden">
 
+      {/* Hero Section with Immersive Background */}
+      <section
         ref={heroRef}
-        videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
-        className="min-h-[100vh] flex items-center"
-        priority={true}
+        className="relative w-full min-h-screen h-screen overflow-hidden flex items-center"
       >
+        {/* Animated Background Image */}
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full z-0"
+          initial={{ scale: 1.1 }}
+          animate={{
+            scale: [1.1, 1, 1.1],
+            rotate: [-0.5, 0.5, -0.5]
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <Image
+            src="/logo/sectionherohome.jpeg"
+            alt="Africa Centred Technology Hero"
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover brightness-[1]"
+            style={{ objectFit: 'cover' }}
+          />
+        </motion.div>
+
+        {/* Gradient Overlay */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-[#1B3022]/30 via-[#1B3022]/20 to-[#2C4A35]/30 z-[1]"
+          animate={{ opacity: [0.9, 1, 0.9] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+
+        {/* Lens Flares */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full blur-3xl z-[2]"
+            style={{
+              width: `${80 + Math.random() * 100}px`,
+              height: `${80 + Math.random() * 100}px`,
+              background: i % 3 === 0 ? '#D35400' : i % 3 === 1 ? '#F39C12' : '#C0392B',
+              opacity: 0.15,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`
+            }}
+            animate={{
+              x: [0, (Math.random() - 0.5) * 400, 0],
+              y: [0, (Math.random() - 0.5) * 400, 0],
+              scale: [1, 1.3, 1]
+            }}
+            transition={{
+              duration: 12 + Math.random() * 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+
+        {/* Tech Grid Overlay */}
+        <div className="absolute inset-0 z-[3] opacity-10 pointer-events-none">
+          <svg className="w-full h-full">
+            <defs>
+              <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#F39C12" strokeWidth="0.5" />
+                <circle cx="0" cy="0" r="1" fill="#F39C12" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-b from-transparent via-[#F39C12]/5 to-transparent"
+            animate={{ y: [-100, window.innerHeight + 100] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+          />
+        </div>
+
+        {/* Floating Particles */}
+        {[...Array(50)].map((_, i) => {
+          const size = Math.random() * 3 + 1;
+          return (
+            <motion.div
+              key={i}
+              className="absolute rounded-full z-[4]"
+              style={{
+                width: `${size}px`,
+                height: `${size}px`,
+                background: i % 3 === 0 ? '#D35400' : i % 3 === 1 ? '#F39C12' : '#FFFFFF',
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                boxShadow: `0 0 ${size * 2}px ${i % 3 === 0 ? '#D35400' : i % 3 === 1 ? '#F39C12' : '#FFFFFF'}`
+              }}
+              animate={{
+                y: [(Math.random() - 0.5) * 40, (Math.random() - 0.5) * 40, (Math.random() - 0.5) * 40],
+                x: [(Math.random() - 0.5) * 40, (Math.random() - 0.5) * 40, (Math.random() - 0.5) * 40],
+                opacity: [0, 0.8, 0],
+                scale: [0.5, 1.8, 0.5]
+              }}
+              transition={{
+                duration: 2 + Math.random() * 5,
+                repeat: Infinity,
+                delay: Math.random() * 3,
+                ease: "easeInOut"
+              }}
+            />
+          );
+        })}
+
+        {/* Content */}
         <div className="container mx-auto px-4 relative z-10 py-32">
-          <motion.div 
+          <motion.div
             className="max-w-[900px]"
             style={{ opacity: heroOpacity }}
           >
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -135,7 +241,7 @@ export default function Home() {
               </span>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -157,24 +263,24 @@ export default function Home() {
               </span>
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-white/80 font-body text-[18px] md:text-[20px] mb-12 max-w-[650px] leading-relaxed"
             >
-              Africa Centred Technology ( ACT ) fusionne l'intelligence artificielle et l'ingénierie de pointe 
+              Africa Centred Technology ( ACT ) fusionne l'intelligence artificielle et l'ingénierie de pointe
               pour propulser les entreprises africaines au sommet de l'innovation mondiale.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-wrap items-center gap-6"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link 
+                <Link
                   href="/contact"
                   className="group bg-[#D35400] hover:bg-white text-white hover:text-[#D35400] px-10 py-5 text-[14px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-3 relative overflow-hidden"
                 >
@@ -182,7 +288,7 @@ export default function Home() {
                     Démarrer votre transformation IA
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
-                  <motion.div 
+                  <motion.div
                     className="absolute inset-0 bg-white"
                     initial={{ x: "-100%" }}
                     whileHover={{ x: 0 }}
@@ -190,15 +296,15 @@ export default function Home() {
                   />
                 </Link>
               </motion.div>
-              
+
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link 
+                <Link
                   href="/projects"
                   className="group flex items-center gap-4 text-white"
                 >
                   <span className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#F39C12] transition-colors relative">
                     <Play className="w-5 h-5 ml-1 relative z-10" fill="white" />
-                    <motion.span 
+                    <motion.span
                       className="absolute inset-0 rounded-full border border-white/30"
                       animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
                       transition={{ duration: 2, repeat: Infinity }}
@@ -211,60 +317,45 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="mt-16 pt-8 border-t border-white/20"
-            >
-              <p className="text-white/50 text-[12px] uppercase tracking-wider mb-4">Pionniers de la tech africaine</p>
-              <div className="flex flex-wrap items-center gap-8">
-                {clients.map((client, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 0.6, y: 0 }}
-                    transition={{ delay: 1.2 + i * 0.1 }}
-                    whileHover={{ opacity: 1, scale: 1.05, color: "#F39C12" }}
-                    className="text-white text-[14px] font-bold uppercase tracking-wider cursor-default transition-colors"
-                  >
-                    {client}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      <AfricanDivider className="my-10" />
+
+      {/* Stats Section */}
+      <ImmersiveWrapper showAI={true} showPattern={true} showGrowth={true} showAfricanPattern={true} className="py-20 bg-[#0A1410]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/95 to-[#0A1410] z-0" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center relative group p-8 bg-[#11221a] border border-white/10 border-b-2 border-b-[#D35400]/50 rounded-2xl shadow-xl transition-all min-w-[280px]"
+              >
+                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                <span className="text-white/70 text-[13px] uppercase tracking-wider font-medium">
+                  {stat.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </ImmersiveWrapper>
 
-{/* Stats Section */}
-<ImmersiveWrapper showAI={true} showPattern={true} showGrowth={true} className="py-20">
-<div className="container mx-auto px-4 relative z-10">
-<div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-{stats.map((stat, index) => (
-<motion.div
-key={index}
-initial={{ opacity: 0, y: 30 }}
-whileInView={{ opacity: 1, y: 0 }}
-viewport={{ once: true }}
-transition={{ delay: index * 0.1 }}
-className="text-center relative group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
->
-<AnimatedCounter value={stat.value} suffix={stat.suffix} />
-<span className="text-white/70 text-[13px] uppercase tracking-wider font-medium">
-{stat.label}
-</span>
-</motion.div>
-))}
-</div>
-</div>
-</ImmersiveWrapper>
+      <AfricanDivider className="my-10" />
 
       {/* AI & Innovation Section */}
-      <ImmersiveWrapper 
+      <ImmersiveWrapper
         videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
-        className="py-28"
+        className="py-28 bg-[#0A1410]"
+        showAfricanPattern={true}
       >
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/95 to-[#0A1410] z-0" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -292,7 +383,7 @@ className="text-center relative group p-6 bg-white/5 backdrop-blur-sm border bor
                   <p className="text-white/80">Développement de modèles d'IA adaptés aux réalités africaines.</p>
                 </div>
               </div>
-              <motion.div 
+              <motion.div
                 className="absolute -top-10 -right-10 w-40 h-40 bg-[#D35400]/10 rounded-full blur-3xl -z-10"
                 animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0.4, 0.2] }}
                 transition={{ duration: 8, repeat: Infinity }}
@@ -312,8 +403,8 @@ className="text-center relative group p-6 bg-white/5 backdrop-blur-sm border bor
               </h2>
               <div className="w-24 h-1.5 bg-[#D35400] mb-8" />
               <p className="text-white/70 text-[17px] leading-relaxed mb-10">
-                Nous ne nous contentons pas d'implémenter des technologies. Nous créons les moteurs 
-                de croissance de demain en intégrant l'IA générative, l'analyse prédictive et 
+                Nous ne nous contentons pas d'implémenter des technologies. Nous créons les moteurs
+                de croissance de demain en intégrant l'IA générative, l'analyse prédictive et
                 l'automatisation intelligente dans le cœur de votre métier.
               </p>
 
@@ -324,7 +415,7 @@ className="text-center relative group p-6 bg-white/5 backdrop-blur-sm border bor
                   { icon: Shield, title: "Data Ethics", text: "Solutions responsables et sécurisées" },
                   { icon: Rocket, title: "Scalabilité", text: "Architecture produit prête pour la croissance" }
                 ].map((item, i) => (
-                  <motion.div 
+                  <motion.div
                     key={i}
                     whileHover={{ y: -5, backgroundColor: "rgba(255,255,255,0.1)" }}
                     className="p-6 bg-[#1B3022]/40 rounded-xl border border-white/10"
@@ -340,58 +431,61 @@ className="text-center relative group p-6 bg-white/5 backdrop-blur-sm border bor
         </div>
       </ImmersiveWrapper>
 
-{/* Expertise Section */}
-<ImmersiveWrapper showAI={true} showGrowth={true} className="py-28">
-<div className="container mx-auto px-4 relative z-10">
-<div className="grid lg:grid-cols-2 gap-20 items-center">
-<motion.div
-initial={{ opacity: 0, x: -50 }}
-whileInView={{ opacity: 1, x: 0 }}
-viewport={{ once: true }}
->
-<span className="text-[#F39C12] text-[13px] font-bold uppercase tracking-[3px] mb-4 block">
-Notre Expertise
-</span>
-<h2 className="text-white font-display text-[40px] md:text-[48px] font-bold uppercase mb-6 leading-tight">
-Ingénierie de <span className="text-[#F39C12]">Haut Niveau</span>
-</h2>
-<div className="w-24 h-1.5 bg-[#D35400] mb-8" />
-<p className="text-white/70 text-[17px] leading-relaxed mb-8">
-De la conception à l'implémentation, nous apportons une rigueur d'ingénierie 
-exceptionnelle pour garantir des solutions robustes, sécurisées et évolutives.
-</p>
+      <AfricanDivider className="my-10" />
 
-<div className="space-y-6">
-{services.map((service, index) => (
-<motion.div
-key={index}
-initial={{ opacity: 0, x: -30 }}
-whileInView={{ opacity: 1, x: 0 }}
-viewport={{ once: true }}
-transition={{ delay: index * 0.1 }}
-whileHover={{ x: 10, backgroundColor: "rgba(255,255,255,0.05)" }}
-className="group flex items-start gap-5 p-5 bg-white/5 backdrop-blur-sm border border-white/10 cursor-pointer relative overflow-hidden rounded-lg"
->
-<motion.div
-className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:scale-y-100 transition-transform origin-top"
-/>
-<div className="w-14 h-14 bg-[#1B3022] group-hover:bg-[#D35400] transition-all duration-300 flex items-center justify-center flex-shrink-0 rounded-lg border border-white/10">
-<service.icon className="w-6 h-6 text-white" />
-</div>
-<div className="flex-1">
-<div className="flex items-center justify-between mb-2">
-<h3 className="text-white font-bold text-[16px] uppercase group-hover:text-[#F39C12] transition-colors">
-{service.title}
-</h3>
-<span className="text-[#F39C12] text-[11px] font-bold">{service.stats}</span>
-</div>
-<p className="text-white/60 text-[14px]">{service.description}</p>
-</div>
-<ArrowUpRight className="w-5 h-5 text-white/40 group-hover:text-[#F39C12] transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
-</motion.div>
-))}
-</div>
-</motion.div>
+      {/* Expertise Section */}
+      <ImmersiveWrapper showAI={true} showGrowth={true} showAfricanPattern={true} className="py-28 bg-[#0A1410]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/95 to-[#0A1410] z-0" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-[#F39C12] text-[13px] font-bold uppercase tracking-[3px] mb-4 block">
+                Notre Expertise
+              </span>
+              <h2 className="text-white font-display text-[40px] md:text-[48px] font-bold uppercase mb-6 leading-tight">
+                Ingénierie de <span className="text-[#F39C12]">Haut Niveau</span>
+              </h2>
+              <div className="w-24 h-1.5 bg-[#D35400] mb-8" />
+              <p className="text-white/70 text-[17px] leading-relaxed mb-8">
+                De la conception à l'implémentation, nous apportons une rigueur d'ingénierie
+                exceptionnelle pour garantir des solutions robustes, sécurisées et évolutives.
+              </p>
+
+              <div className="space-y-6">
+                {services.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ x: 10, backgroundColor: "rgba(255,255,255,0.05)" }}
+                    className="group flex items-start gap-5 p-5 bg-white/5 backdrop-blur-sm border border-white/10 cursor-pointer relative overflow-hidden rounded-lg"
+                  >
+                    <motion.div
+                      className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:scale-y-100 transition-transform origin-top"
+                    />
+                    <div className="w-14 h-14 bg-[#1B3022] group-hover:bg-[#D35400] transition-all duration-300 flex items-center justify-center flex-shrink-0 rounded-lg border border-white/10">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-white font-bold text-[16px] uppercase group-hover:text-[#F39C12] transition-colors">
+                          {service.title}
+                        </h3>
+                        <span className="text-[#F39C12] text-[11px] font-bold">{service.stats}</span>
+                      </div>
+                      <p className="text-white/60 text-[14px]">{service.description}</p>
+                    </div>
+                    <ArrowUpRight className="w-5 h-5 text-white/40 group-hover:text-[#F39C12] transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -408,12 +502,12 @@ className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:s
                   className="w-full h-[600px] object-cover"
                 />
               </div>
-              <motion.div 
+              <motion.div
                 className="absolute -bottom-8 -left-8 w-64 h-64 bg-[#F39C12] -z-10 rounded-full blur-2xl opacity-20"
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 6, repeat: Infinity }}
               />
-              <motion.div 
+              <motion.div
                 className="absolute -top-8 -right-8 bg-[#1B3022] text-white p-8 z-20 shadow-2xl rounded-2xl"
                 whileHover={{ scale: 1.05, rotate: 2 }}
               >
@@ -426,7 +520,7 @@ className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:s
       </ImmersiveWrapper>
 
       {/* Portfolio Section */}
-      <ImmersiveWrapper 
+      <ImmersiveWrapper
         videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         className="py-28"
       >
@@ -445,13 +539,13 @@ className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:s
               </h2>
               <div className="w-24 h-1.5 bg-[#D35400]" />
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Link 
+              <Link
                 href="/projects"
                 className="group text-white text-[13px] font-bold uppercase tracking-wider flex items-center gap-2 hover:text-[#F39C12] transition-all mt-6 md:mt-0 bg-white/5 px-6 py-3 border border-white/10 rounded-full hover:bg-white/10"
               >
@@ -480,7 +574,7 @@ className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:s
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1B3022] via-[#1B3022]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                  
+
                   <motion.div
                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                   >
@@ -508,160 +602,170 @@ className="absolute left-0 top-0 w-1 h-full bg-[#D35400] scale-y-0 group-hover:s
         </div>
       </ImmersiveWrapper>
 
-{/* Testimonials */}
-<ImmersiveWrapper showAI={true} showPattern={true} className="py-28">
-<div className="container mx-auto px-4 relative z-10">
-<motion.div
-initial={{ opacity: 0, y: 30 }}
-whileInView={{ opacity: 1, y: 0 }}
-viewport={{ once: true }}
-className="text-center mb-16"
->
-<span className="text-[#F39C12] text-[13px] font-bold uppercase tracking-[3px] mb-4 block">
-Témoignages
-</span>
-<h2 className="text-white font-display text-[40px] font-bold uppercase mb-4">
-La Voix de nos <span className="text-[#F39C12]">Partenaires</span>
-</h2>
-<div className="w-24 h-1.5 bg-[#D35400] mx-auto" />
-</motion.div>
+      <AfricanDivider className="my-10" />
 
-<div className="grid md:grid-cols-2 gap-8">
-{testimonials.map((testimonial, index) => (
-<motion.div
-key={index}
-initial={{ opacity: 0, y: 30 }}
-whileInView={{ opacity: 1, y: 0 }}
-viewport={{ once: true }}
-transition={{ delay: index * 0.2 }}
-whileHover={{ y: -10, backgroundColor: "rgba(255,255,255,0.08)" }}
-className="bg-white/5 backdrop-blur-md p-12 relative group rounded-2xl border border-white/10 shadow-2xl"
->
-<Quote className="w-16 h-16 text-[#F39C12]/10 absolute top-8 right-8" />
-<p className="text-white/80 text-[18px] leading-relaxed mb-10 relative z-10 font-medium">
-"{testimonial.quote}"
-</p>
-<div className="flex items-center gap-5">
-<div className="relative">
-<Image
-src={testimonial.image}
-alt={testimonial.author}
-width={70}
-height={70}
-className="rounded-full object-cover border-4 border-white/10"
-/>
-<div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#D35400] rounded-full flex items-center justify-center">
-<CheckCircle className="w-3 h-3 text-white" />
-</div>
-</div>
-<div>
-<h4 className="text-white font-bold text-[17px]">{testimonial.author}</h4>
-<p className="text-[#F39C12] text-[14px] font-medium">{testimonial.role}</p>
-</div>
-</div>
-</motion.div>
-))}
-</div>
-</div>
-</ImmersiveWrapper>
+      {/* Testimonials */}
+      <ImmersiveWrapper showAI={true} showPattern={true} showAfricanPattern={true} className="py-28 bg-[#0A1410]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/95 to-[#0A1410] z-0" />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-[#F39C12] text-[13px] font-bold uppercase tracking-[3px] mb-4 block">
+              Témoignages
+            </span>
+            <h2 className="text-white font-display text-[40px] font-bold uppercase mb-4">
+              La Voix de nos <span className="text-[#F39C12]">Partenaires</span>
+            </h2>
+            <div className="w-24 h-1.5 bg-[#D35400] mx-auto" />
+          </motion.div>
 
-{/* About Link Section */}
-<ImmersiveWrapper showAI={true} showPattern={true} className="py-28">
-<div className="container mx-auto px-4 relative z-10">
-<div className="grid lg:grid-cols-2 gap-20 items-center">
-<motion.div
-initial={{ opacity: 0, scale: 0.9 }}
-whileInView={{ opacity: 1, scale: 1 }}
-viewport={{ once: true }}
-className="relative order-2 lg:order-1"
->
-<div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-<Image
-src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-alt="Africa Centred Technology ( ACT ) Team"
-width={600}
-height={500}
-className="w-full h-[550px] object-cover"
-/>
-<div className="absolute inset-0 bg-[#1B3022]/40 mix-blend-multiply" />
-</div>
-<motion.div 
-className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#F39C12]/20 -z-10 rounded-full blur-3xl"
-animate={{ scale: [1, 1.2, 1] }}
-transition={{ duration: 5, repeat: Infinity }}
-/>
-<div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl z-20 flex items-center gap-4">
-<div className="w-12 h-12 bg-[#D35400] rounded-full flex items-center justify-center">
-<Users className="w-6 h-6 text-white" />
-</div>
-<div>
-<div className="text-[20px] font-bold text-white">25+ Experts</div>
-<div className="text-[12px] text-white/60 uppercase tracking-widest">Dédiés à votre succès</div>
-</div>
-</div>
-</motion.div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ y: -10, backgroundColor: "rgba(255,255,255,0.08)" }}
+                className="bg-white/5 backdrop-blur-md p-12 relative group rounded-2xl border border-white/10 shadow-2xl"
+              >
+                <Quote className="w-16 h-16 text-[#F39C12]/10 absolute top-8 right-8" />
+                <p className="text-white/80 text-[18px] leading-relaxed mb-10 relative z-10 font-medium">
+                  "{testimonial.quote}"
+                </p>
+                <div className="flex items-center gap-5">
+                  <div className="relative">
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.author}
+                      width={70}
+                      height={70}
+                      className="rounded-full object-cover border-4 border-white/10"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#D35400] rounded-full flex items-center justify-center">
+                      <CheckCircle className="w-3 h-3 text-white" />
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-[17px]">{testimonial.author}</h4>
+                    <p className="text-[#F39C12] text-[14px] font-medium">{testimonial.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </ImmersiveWrapper>
 
-<motion.div
-initial={{ opacity: 0, x: 50 }}
-whileInView={{ opacity: 1, x: 0 }}
-viewport={{ once: true }}
-className="order-1 lg:order-2"
->
-<span className="text-[#F39C12] text-[13px] font-bold uppercase tracking-[3px] mb-4 block">
-Qui sommes-nous
-</span>
-<h2 className="text-white font-display text-[40px] font-bold uppercase mb-6 leading-tight">
-Architectes de la <span className="text-[#F39C12]">Révolution</span> Numérique
-</h2>
-<div className="w-24 h-1.5 bg-[#D35400] mb-8" />
-<p className="text-white/70 text-[17px] leading-relaxed mb-8">
-Africa Centred Technology ( ACT ) est né d'une ambition simple : prouver que l'Afrique peut non seulement 
-adopter la technologie, mais aussi la créer et la diriger. Notre mission est d'armer 
-les entreprises locales avec les outils technologiques les plus avancés au monde.
-</p>
+      <AfricanDivider className="my-10" />
 
-<div className="grid grid-cols-2 gap-6 mb-12">
-{[
-{ icon: BrainCircuit, text: "Vision IA First" },
-{ icon: Shield, text: "Cyber-Souveraineté" },
-{ icon: Globe, text: "ADN Pan-Africain" },
-{ icon: Target, text: "Impact Mesurable" }
-].map((item, i) => (
-<motion.div 
-key={i}
-initial={{ opacity: 0, y: 10 }}
-whileInView={{ opacity: 1, y: 0 }}
-viewport={{ once: true }}
-transition={{ delay: i * 0.1 }}
-className="flex items-center gap-3"
->
-<div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center group border border-white/10">
-<item.icon className="w-5 h-5 text-[#F39C12] group-hover:scale-110 transition-transform" />
-</div>
-<span className="text-white font-bold text-[14px]">{item.text}</span>
-</motion.div>
-))}
-</div>
+      {/* About Link Section */}
+      <ImmersiveWrapper showAI={true} showPattern={true} showAfricanPattern={true} className="py-28 bg-[#0A1410]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/95 to-[#0A1410] z-0" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative order-2 lg:order-1"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                <Image
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Africa Centred Technology ( ACT ) Team"
+                  width={600}
+                  height={500}
+                  className="w-full h-[550px] object-cover"
+                />
+                <div className="absolute inset-0 bg-[#1B3022]/40 mix-blend-multiply" />
+              </div>
+              <motion.div
+                className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#F39C12]/20 -z-10 rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 5, repeat: Infinity }}
+              />
+              <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl z-20 flex items-center gap-4">
+                <div className="w-12 h-12 bg-[#D35400] rounded-full flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-[20px] font-bold text-white">25+ Experts</div>
+                  <div className="text-[12px] text-white/60 uppercase tracking-widest">Dédiés à votre succès</div>
+                </div>
+              </div>
+            </motion.div>
 
-<motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-<Link 
-href="/about"
-className="inline-flex items-center gap-4 bg-[#D35400] hover:bg-white hover:text-[#D35400] text-white px-10 py-5 text-[14px] font-bold uppercase tracking-widest transition-all rounded-lg shadow-lg hover:shadow-2xl"
->
-Découvrir notre ADN
-<ArrowRight className="w-4 h-4" />
-</Link>
-</motion.div>
-</motion.div>
-</div>
-</div>
-</ImmersiveWrapper>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2"
+            >
+              <span className="text-[#F39C12] text-[13px] font-bold uppercase tracking-[3px] mb-4 block">
+                Qui sommes-nous
+              </span>
+              <h2 className="text-white font-display text-[40px] font-bold uppercase mb-6 leading-tight">
+                Architectes de la <span className="text-[#F39C12]">Révolution</span> Numérique
+              </h2>
+              <div className="w-24 h-1.5 bg-[#D35400] mb-8" />
+              <p className="text-white/70 text-[17px] leading-relaxed mb-8">
+                Africa Centred Technology ( ACT ) est né d'une ambition simple : prouver que l'Afrique peut non seulement
+                adopter la technologie, mais aussi la créer et la diriger. Notre mission est d'armer
+                les entreprises locales avec les outils technologiques les plus avancés au monde.
+              </p>
+
+              <div className="grid grid-cols-2 gap-6 mb-12">
+                {[
+                  { icon: BrainCircuit, text: "Vision IA First" },
+                  { icon: Shield, text: "Cyber-Souveraineté" },
+                  { icon: Globe, text: "ADN Pan-Africain" },
+                  { icon: Target, text: "Impact Mesurable" }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center group border border-white/10">
+                      <item.icon className="w-5 h-5 text-[#F39C12] group-hover:scale-110 transition-transform" />
+                    </div>
+                    <span className="text-white font-bold text-[14px]">{item.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-4 bg-[#D35400] hover:bg-white hover:text-[#D35400] text-white px-10 py-5 text-[14px] font-bold uppercase tracking-widest transition-all rounded-lg shadow-lg hover:shadow-2xl"
+                >
+                  Découvrir notre ADN
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </ImmersiveWrapper>
+
+      <AfricanDivider className="my-10" />
 
       {/* Final CTA */}
-      <ImmersiveWrapper 
+      <ImmersiveWrapper
         videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
-        className="py-32"
+        className="py-32 bg-[#0A1410]"
+        showAfricanPattern={true}
       >
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/95 to-[#0A1410] z-0" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -669,7 +773,7 @@ Découvrir notre ADN
             viewport={{ once: true }}
           >
             <motion.div
-              animate={{ 
+              animate={{
                 rotate: [0, 360],
                 scale: [1, 1.1, 1]
               }}
@@ -678,18 +782,18 @@ Découvrir notre ADN
             >
               <Sparkles className="w-10 h-10 text-white" />
             </motion.div>
-            
+
             <h2 className="text-white font-display text-[40px] md:text-[60px] font-bold uppercase mb-8 leading-tight">
               Rejoignez la <br /><span className="text-[#F39C12]">Révolution Tech</span>
             </h2>
             <p className="text-white/70 text-[20px] mb-12 max-w-[700px] mx-auto leading-relaxed">
-              Prêt à transformer vos défis en opportunités technologiques ? Africa Centred Technology ( ACT ) est 
+              Prêt à transformer vos défis en opportunités technologiques ? Africa Centred Technology ( ACT ) est
               votre partenaire stratégique pour l'ère de l'Intelligence Artificielle.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-6">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link 
+                <Link
                   href="/contact"
                   className="inline-flex items-center gap-3 bg-[#D35400] text-white px-12 py-6 text-[15px] font-bold uppercase tracking-widest hover:bg-white hover:text-[#D35400] transition-all rounded-full shadow-2xl"
                 >
@@ -698,7 +802,7 @@ Découvrir notre ADN
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link 
+                <Link
                   href="/services"
                   className="inline-flex items-center gap-3 bg-transparent border-2 border-white/30 text-white px-12 py-6 text-[15px] font-bold uppercase tracking-widest hover:bg-white/10 transition-all rounded-full backdrop-blur-sm"
                 >

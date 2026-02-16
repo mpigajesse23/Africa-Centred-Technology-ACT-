@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Users, Award, Target, Lightbulb, Shield, Globe, Heart, ArrowRight, Play, Quote, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
-import { ImmersiveWrapper } from '@/components/ui/immersive-backgrounds';
+import { ImmersiveWrapper, AfricanDivider } from '@/components/ui/immersive-backgrounds';
 
 const stats = [
   { value: "15", suffix: "", label: "Projets", description: "Solutions déployées avec succès" },
@@ -72,10 +72,10 @@ const team = [
 ];
 
 const timeline = [
-  { year: "2023", title: "Naissance", description: "Création d'Africa Centred Technology ( ACT ) comme startup d'ingénierie tech portée par une équipe soudée.", highlight: true },
-  { year: "2024", title: "Premiers POC", description: "Déploiement des premiers prototypes IA et data pour des entreprises africaines." },
-  { year: "2025", title: "Accélération", description: "Déploiement du Système RAG Multi-sources et montée en puissance des missions de conseil pour l'écosystème africain." },
-  { year: "2026", title: "Cap 2030", description: "Consolidation de notre vision pan-africaine avec une équipe dynamique et agile.", highlight: true }
+  { year: "2023", title: "Naissance", description: "Création d'Africa Centred Technology ( ACT ) comme startup d'ingénierie tech portée par une équipe soudée.", highlight: true, color: "#D35400" },
+  { year: "2024", title: "Premiers POC", description: "Déploiement des premiers prototypes IA et data pour des entreprises africaines.", color: "#F39C12" },
+  { year: "2025", title: "Accélération", description: "Déploiement du Système RAG Multi-sources et montée en puissance des missions de conseil pour l'écosystème africain.", color: "#2E7D32" },
+  { year: "2026", title: "Cap 2030", description: "Consolidation de notre vision pan-africaine avec une équipe dynamique et agile.", highlight: true, color: "#C0392B" }
 ];
 
 const certifications = [
@@ -86,7 +86,7 @@ const certifications = [
 const AnimatedStat = ({ value, suffix, label, description }: { value: string; suffix: string; label: string; description: string }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  
+
   return (
     <motion.div
       ref={ref}
@@ -127,12 +127,13 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
-      
-      <ImmersiveWrapper 
+
+      <ImmersiveWrapper
         ref={heroRef}
         videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
         priority={true}
         className="min-h-[650px] flex items-center"
+        showAfricanPattern={true}
       >
         <div className="container mx-auto px-4 relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -152,7 +153,7 @@ export default function AboutPage() {
                   Notre Histoire
                 </span>
               </motion.div>
-              
+
               <h1 className="text-white font-display text-[42px] md:text-[56px] lg:text-[64px] font-extrabold uppercase leading-[1.05] mb-6">
                 Pionniers de la{" "}
                 <span className="relative inline-block">
@@ -166,16 +167,16 @@ export default function AboutPage() {
                 </span>
                 {" "}Africaine
               </h1>
-              
+
               <p className="text-white/80 text-[18px] leading-relaxed mb-8 max-w-[550px]">
-                Depuis 2023, nous accompagnons les entreprises africaines 
-                en leaders technologiques mondiaux, avec l'énergie d'une startup 
+                Depuis 2023, nous accompagnons les entreprises africaines
+                en leaders technologiques mondiaux, avec l'énergie d'une startup
                 et une compréhension profonde du continent.
               </p>
 
               <div className="flex flex-wrap gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link 
+                  <Link
                     href="/contact"
                     className="bg-[#D35400] hover:bg-white hover:text-[#D35400] text-white px-8 py-4 text-[13px] font-bold uppercase tracking-widest transition-all flex items-center gap-2"
                   >
@@ -184,7 +185,7 @@ export default function AboutPage() {
                   </Link>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <a 
+                  <a
                     href="#story"
                     className="flex items-center gap-3 text-white group"
                   >
@@ -226,13 +227,15 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#D35400] via-[#F39C12] to-[#D35400]"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         />
       </ImmersiveWrapper>
+
+      <AfricanDivider className="my-8" />
 
       <section id="story" className="py-28 bg-white relative">
         <div className="container mx-auto px-4">
@@ -249,17 +252,17 @@ export default function AboutPage() {
                 Une Vision Née en <span className="text-[#D35400]">Afrique</span>, Pour le Monde
               </h2>
               <div className="w-24 h-1.5 bg-[#D35400] mb-8" />
-              
+
               <p className="text-[#2C2C2C]/80 text-[17px] leading-relaxed mb-6">
-                <span className="text-[#1B3022] font-bold">Africa Centred Technology ( ACT )</span> est née en 2023 de la conviction 
+                <span className="text-[#1B3022] font-bold">Africa Centred Technology ( ACT )</span> est née en 2023 de la conviction
                 profonde que l'Afrique possède un potentiel technologique immense, prêt à être libéré.
               </p>
               <p className="text-[#2C2C2C]/70 text-[17px] leading-relaxed mb-6">
-                Notre équipe fondatrice — MPIGA-ODOUMBA JESSE, Aldrin, Bruno Junior DJOUROBI OMANDA, Elvis-Theo AKIEME OYONO et Sohaib BAROUD — 
+                Notre équipe fondatrice — MPIGA-ODOUMBA JESSE, Aldrin, Bruno Junior DJOUROBI OMANDA, Elvis-Theo AKIEME OYONO et Sohaib BAROUD —
                 a uni ses forces pour bâtir une startup africaine ambitieuse, sans hiérarchie figée.
               </p>
               <p className="text-[#2C2C2C]/70 text-[17px] leading-relaxed mb-8">
-                Aujourd'hui, nous avançons avec une équipe soudée et dynamique, en accompagnant des startups et 
+                Aujourd'hui, nous avançons avec une équipe soudée et dynamique, en accompagnant des startups et
                 des organisations africaines dans leur transformation digitale.
               </p>
 
@@ -279,7 +282,7 @@ export default function AboutPage() {
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -306,12 +309,12 @@ export default function AboutPage() {
                   </motion.span>
                 </motion.div>
               </div>
-              <motion.div 
+              <motion.div
                 className="absolute -bottom-8 -left-8 w-56 h-56 bg-[#F39C12] -z-10"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 4, repeat: Infinity }}
               />
-              <motion.div 
+              <motion.div
                 className="absolute -top-6 -right-6 bg-[#1B3022] text-white p-8 z-20"
                 whileHover={{ scale: 1.05 }}
               >
@@ -323,7 +326,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ImmersiveWrapper className="py-24">
+      <AfricanDivider className="my-8" />
+
+      <ImmersiveWrapper className="py-24 bg-[#0A1410]" showAfricanPattern={true}>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/95 to-[#0A1410] z-0" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -386,7 +392,7 @@ export default function AboutPage() {
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
                 />
-                
+
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                   className="w-16 h-16 mb-6 flex items-center justify-center transition-colors"
@@ -394,7 +400,7 @@ export default function AboutPage() {
                 >
                   <value.icon className="w-8 h-8 text-white" />
                 </motion.div>
-                
+
                 <h3 className="text-[#1B3022] font-bold text-[18px] uppercase mb-4 group-hover:text-[#D35400] transition-colors">
                   {value.title}
                 </h3>
@@ -407,7 +413,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ImmersiveWrapper showVideo={false} className="py-28 bg-white">
+      <AfricanDivider className="my-8" />
+
+      <ImmersiveWrapper className="py-28 bg-[#0A1410]" showAfricanPattern={true}>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/95 to-[#0A1410] z-0" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -415,18 +424,18 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center max-w-[700px] mx-auto mb-16"
           >
-            <span className="text-[#D35400] text-[13px] font-bold uppercase tracking-[3px] mb-4 block">
+            <span className="text-[#F39C12] text-[13px] font-bold uppercase tracking-[3px] mb-4 block">
               Notre Parcours
             </span>
-            <h2 className="text-[#1B3022] font-display text-[40px] font-bold uppercase mb-4">
-              Un Parcours en <span className="text-[#D35400]">Construction</span>
+            <h2 className="text-white font-display text-[40px] font-bold uppercase mb-4">
+              Un Parcours en <span className="text-[#F39C12]">Construction</span>
             </h2>
             <div className="w-24 h-1.5 bg-[#D35400] mx-auto" />
           </motion.div>
 
           <div className="relative max-w-[1000px] mx-auto">
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#1B3022]/10 md:-translate-x-1/2" />
-            
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 md:-translate-x-1/2" />
+
             <div className="space-y-12">
               {timeline.map((item, index) => (
                 <motion.div
@@ -435,34 +444,35 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className={`relative flex items-center gap-8 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                  className={`relative flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
                 >
                   <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} pl-20 md:pl-0`}>
-                    <motion.div 
+                    <motion.div
                       whileHover={{ scale: 1.02 }}
-                      className={`p-6 ${item.highlight ? 'bg-[#1B3022] text-white shadow-2xl' : 'bg-[#FCF9F2] shadow-md'}`}
+                      className={`p-6 border border-white/10 rounded-xl bg-[#11221a] shadow-xl transition-all z-20 group`}
+                      style={{ borderTop: `4px solid ${item.color}` }}
                     >
-                      <span className={`text-[28px] font-extrabold ${item.highlight ? 'text-[#F39C12]' : 'text-[#D35400]'}`}>
+                      <span className={`text-[28px] font-extrabold`} style={{ color: item.color }}>
                         {item.year}
                       </span>
-                      <h3 className={`font-bold text-[18px] uppercase mt-2 mb-2 ${item.highlight ? 'text-white' : 'text-[#1B3022]'}`}>
+                      <h3 className={`font-bold text-[18px] uppercase mt-2 mb-2 text-white`}>
                         {item.title}
                       </h3>
-                      <p className={`text-[14px] leading-relaxed ${item.highlight ? 'text-white/70' : 'text-[#2C2C2C]/70'}`}>
+                      <p className={`text-[14px] leading-relaxed text-white/70`}>
                         {item.description}
                       </p>
                     </motion.div>
                   </div>
-                  
-                  <motion.div 
-                    className="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-[#D35400] flex items-center justify-center z-10"
+
+                  <motion.div
+                    className="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center z-10 shadow-lg"
+                    style={{ backgroundColor: item.color }}
                     whileHover={{ scale: 1.2 }}
                   >
                     <div className="w-3 h-3 bg-white rounded-full" />
                   </motion.div>
-                  
+
                   <div className="flex-1 hidden md:block" />
                 </motion.div>
               ))}
@@ -471,10 +481,12 @@ export default function AboutPage() {
         </div>
       </ImmersiveWrapper>
 
-      <ImmersiveWrapper 
+      <ImmersiveWrapper
         videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
-        className="py-28"
+        className="py-28 bg-[#0A1410]"
+        showAfricanPattern={true}
       >
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/90 to-[#0A1410] z-0" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -553,9 +565,8 @@ export default function AboutPage() {
                   key={index}
                   onClick={() => setActiveTeamMember(index)}
                   whileHover={{ scale: 1.03 }}
-                  className={`relative cursor-pointer overflow-hidden rounded-xl ${
-                    activeTeamMember === index ? 'ring-4 ring-[#D35400]' : ''
-                  }`}
+                  className={`relative cursor-pointer overflow-hidden rounded-xl ${activeTeamMember === index ? 'ring-4 ring-[#D35400]' : ''
+                    }`}
                 >
                   <Image
                     src={member.image}
@@ -564,9 +575,8 @@ export default function AboutPage() {
                     height={200}
                     className="w-full h-[180px] object-cover"
                   />
-                  <div className={`absolute inset-0 transition-colors ${
-                    activeTeamMember === index ? 'bg-[#D35400]/30' : 'bg-[#1B3022]/50 hover:bg-[#1B3022]/30'
-                  }`} />
+                  <div className={`absolute inset-0 transition-colors ${activeTeamMember === index ? 'bg-[#D35400]/30' : 'bg-[#1B3022]/50 hover:bg-[#1B3022]/30'
+                    }`} />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <h4 className="text-white font-bold text-[14px] uppercase">{member.name}</h4>
                     <p className="text-white/70 text-[11px]">{member.role}</p>
@@ -578,10 +588,12 @@ export default function AboutPage() {
         </div>
       </ImmersiveWrapper>
 
-      <ImmersiveWrapper 
+      <ImmersiveWrapper
         videoUrl="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_30fps.mp4"
-        className="py-24"
+        className="py-24 bg-[#0A1410]"
+        showAfricanPattern={true}
       >
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1410] via-[#1B3022]/90 to-[#0A1410] z-0" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -596,12 +608,12 @@ export default function AboutPage() {
             >
               <Sparkles className="w-10 h-10 text-white" />
             </motion.div>
-            
+
             <h2 className="text-white font-display text-[36px] md:text-[48px] font-bold uppercase mb-6 leading-tight">
               Prêt à rejoindre <br />l'aventure ?
             </h2>
             <p className="text-white/80 text-[18px] mb-10 max-w-[600px] mx-auto">
-              Découvrez comment Africa Centred Technology ( ACT ) peut transformer votre entreprise et 
+              Découvrez comment Africa Centred Technology ( ACT ) peut transformer votre entreprise et
               propulser votre croissance digitale.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

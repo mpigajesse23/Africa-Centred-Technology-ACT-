@@ -51,14 +51,17 @@
     from {
       height: 0;
     }
+
     to {
       height: var(--radix-accordion-content-height);
     }
   }
+
   @keyframes accordion-up {
     from {
       height: var(--radix-accordion-content-height);
     }
+
     to {
       height: 0;
     }
@@ -66,6 +69,7 @@
 }
 
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -105,19 +109,26 @@
     @apply border-border;
   }
 
-  html, body {
+  html,
+  body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply text-foreground font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display font-bold;
   }
 
