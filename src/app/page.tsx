@@ -149,30 +149,36 @@ export default function Home() {
         />
 
         {/* Lens Flares */}
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full blur-3xl z-[2]"
-            style={{
-              width: `${80 + Math.random() * 100}px`,
-              height: `${80 + Math.random() * 100}px`,
-              background: i % 3 === 0 ? '#D35400' : i % 3 === 1 ? '#F39C12' : '#C0392B',
-              opacity: 0.15,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`
-            }}
-            animate={{
-              x: [0, (Math.random() - 0.5) * 400, 0],
-              y: [0, (Math.random() - 0.5) * 400, 0],
-              scale: [1, 1.3, 1]
-            }}
-            transition={{
-              duration: 12 + Math.random() * 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
+        {[...Array(8)].map((_, i) => {
+          const randomX = (Math.random() - 0.5) * 400;
+          const randomY = (Math.random() - 0.5) * 400;
+          const size = 80 + Math.random() * 100;
+          const duration = 12 + Math.random() * 8;
+          return (
+            <motion.div
+              key={i}
+              className="absolute rounded-full blur-3xl z-[2]"
+              style={{
+                width: `${size}px`,
+                height: `${size}px`,
+                background: i % 3 === 0 ? '#D35400' : i % 3 === 1 ? '#F39C12' : '#C0392B',
+                opacity: 0.15,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`
+              }}
+              animate={{
+                x: [0, randomX, 0],
+                y: [0, randomY, 0],
+                scale: [1, 1.3, 1]
+              }}
+              transition={{
+                duration: duration,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          );
+        })}
 
         {/* Tech Grid Overlay */}
         <div className="absolute inset-0 z-[3] opacity-10 pointer-events-none">
@@ -187,7 +193,7 @@ export default function Home() {
           </svg>
           <motion.div
             className="absolute inset-0 bg-gradient-to-b from-transparent via-[#F39C12]/5 to-transparent"
-            animate={{ y: [-100, window.innerHeight + 100] }}
+            animate={{ y: [-100, 1000] }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
           />
         </div>
